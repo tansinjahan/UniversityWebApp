@@ -10,7 +10,7 @@ public class StudentTable {
 	
 	private static final StudentTable INSTANCE = new StudentTable();
 	
-	public List<Student> students = new ArrayList<>();
+	private List<Student> students = new ArrayList<>();
 	
 	private StudentTable() {}
 	
@@ -53,4 +53,8 @@ public class StudentTable {
 		 		student2.setEmail("lee@gotham");
 		 		student2.setPassword("12345");
 		 	}
+	
+	public List<Student> getStudents(){
+		return students;
+	}
 }

@@ -99,7 +99,7 @@ public class University implements TermEventListener{
 		}
 		
 		public boolean hasCourseExists(int code) {
-			for (Course c : CourseTable.getInstance().courses) {
+			for (Course c : CourseTable.getInstance().getCourses()) {
 				if(c.getCode()== code) {
 					return true;
 				}
@@ -108,7 +108,7 @@ public class University implements TermEventListener{
 		}
 		
 		public List<Course> courses() {
-					return CourseTable.getInstance().courses;
+					return CourseTable.getInstance().getCourses();
 		}
 		
 		public Student createStudent(String name, int studentNumber, String status){
@@ -133,7 +133,7 @@ public class University implements TermEventListener{
 		}
 		
 		public List<Student> students() {
-					return StudentTable.getInstance().students;
+					return StudentTable.getInstance().getStudents();
 		}
 		
 		public static University getInstance() {
@@ -180,7 +180,7 @@ public class University implements TermEventListener{
 		}
 		
 		public boolean studentExist(int studentNumber) {
-					for (Student s : StudentTable.getInstance().students) {
+					for (Student s : StudentTable.getInstance().getStudents()) {
 						if (s.getStudentNumber() == studentNumber) {
 							return true;
 						}
@@ -216,7 +216,7 @@ public class University implements TermEventListener{
 				s.selectedCourses().remove(course);
 			}
 			course.students().clear();
-					CourseTable.getInstance().courses.remove(course);
+					CourseTable.getInstance().getCourses().remove(course);
 		}
 		
 		public boolean deregisterCourse(Course course, Student student) {
@@ -230,7 +230,7 @@ public class University implements TermEventListener{
 		
 		public void deleteStudent(Student student) {
 			if(termState == TermState.CREATE_STUDENT_COURSE_STATE) {	
-				StudentTable.getInstance().students.remove(student);
+				StudentTable.getInstance().getStudents().remove(student);
 					
 					List<Course> courses = new ArrayList<>();
 					courses.addAll(student.currentCourses());

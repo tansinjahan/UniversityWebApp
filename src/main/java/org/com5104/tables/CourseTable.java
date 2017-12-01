@@ -10,7 +10,7 @@ public class CourseTable {
 
 	private static final CourseTable INSTANCE = new CourseTable();
 
-	public List<Course> courses = new ArrayList<>();
+	private List<Course> courses = new ArrayList<>();
 
 	private CourseTable() {}
 
