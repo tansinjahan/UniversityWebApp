@@ -10,7 +10,7 @@ public class CourseTable {
 
 	private static final CourseTable INSTANCE = new CourseTable();
 
-	private List<Course> courses = new ArrayList<>();
+	public List<Course> courses = new ArrayList<>();
 
 	private CourseTable() {}
 
@@ -48,11 +48,11 @@ public class CourseTable {
 	}
 
 	public static void createFakeCourse() {
-//		University.getInstance().createCourse("clerk", "Data Science", 112233, 27, true, 2, 2, false, true);	
-//		University.getInstance().createCourse("clerk", "Data Structure", 343434, 27, true, 2, 2, false, true);
-//		University.getInstance().createCourse("clerk", "Software Engineering", 223344, 26, true, 2, 2, true, false);
-//		University.getInstance().createCourse("clerk", "Machine Learning", 334455, 28, false, 2, 2, true, true);
-//		University.getInstance().createCourse("clerk", "Digital Electronics", 445566, 30, true, 2, 2, false, false);
+		University.getInstance().createCourse("clerk", "Data Science", 112233, 27, true, 2, 2, false, true);	
+		University.getInstance().createCourse("clerk", "Data Structure", 343434, 27, true, 2, 2, false, true);
+		University.getInstance().createCourse("clerk", "Software Engineering", 223344, 26, true, 2, 2, true, false);
+		University.getInstance().createCourse("clerk", "Machine Learning", 334455, 28, false, 2, 2, true, true);
+		University.getInstance().createCourse("clerk", "Digital Electronics", 445566, 30, true, 2, 2, false, false);
 	}
 	
 	public List<Course> getCourses() {

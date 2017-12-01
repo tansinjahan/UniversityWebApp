@@ -22,32 +22,32 @@ public class University implements TermEventListener{
 		private int universityCourseCount = 25; // Default course count 25
 		private int passRate = 70; // Default pass rate is 70
 		
-//		public Course createCourse(
-//							String user, 
-//							String title, 
-//							int code, 
-//							int capsize, 
-//							boolean hasAFinal, 
-//							int numberOfAssignments, 
-//							int numberOfMidTerms, 
-//							boolean enforcePrereqs, 
-//							boolean isProjectCourse) {
-//			
-//				if (termState != TermState.CREATE_STUDENT_COURSE_STATE || termState == TermState.COURSE_REGISTRATION_STATE) {
-//							String errMsg = "Course cannot be created because course creation period is over";
-//							throw new IllegalStateException(errMsg);
-//						}
-//			
-//				if (hasCourseExists(code)) {
-//							String errMsg = String.format("Course with code %d already exists", code);
-//							throw new IllegalArgumentException(errMsg);
-//						}
-//				CourseInteractor interactor = new CourseInteractor(this);
-//				Course course = interactor.createCourse(user, title, code, capsize, hasAFinal, numberOfAssignments, numberOfMidTerms, enforcePrereqs, isProjectCourse);
-//				CourseTable.getInstance().add(course);
-//				logger.info(String.format("Course is created by clerk and added into course table"));
-//				return course;
-//		}
+		public Course createCourse(
+							String user, 
+							String title, 
+							int code, 
+							int capsize, 
+							boolean hasAFinal, 
+							int numberOfAssignments, 
+							int numberOfMidTerms, 
+							boolean enforcePrereqs, 
+							boolean isProjectCourse) {
+			
+				if (termState != TermState.CREATE_STUDENT_COURSE_STATE || termState == TermState.COURSE_REGISTRATION_STATE) {
+							String errMsg = "Course cannot be created because course creation period is over";
+							throw new IllegalStateException(errMsg);
+						}
+			
+				if (hasCourseExists(code)) {
+							String errMsg = String.format("Course with code %d already exists", code);
+							throw new IllegalArgumentException(errMsg);
+						}
+				CourseInteractor interactor = new CourseInteractor(this);
+				Course course = interactor.createCourse(user, title, code, capsize, hasAFinal, numberOfAssignments, numberOfMidTerms, enforcePrereqs, isProjectCourse);
+				CourseTable.getInstance().add(course);
+				logger.info(String.format("Course is created by clerk and added into course table"));
+				return course;
+		}
 		
 		
 		public enum TermState {
@@ -98,43 +98,43 @@ public class University implements TermEventListener{
 			return "Carleton";
 		}
 		
-//		public boolean hasCourseExists(int code) {
-//			for (Course c : CourseTable.getInstance().courses) {
-//				if(c.getCode()== code) {
-//					return true;
-//				}
-//			}
-//			return false;
-//		}
+		public boolean hasCourseExists(int code) {
+			for (Course c : CourseTable.getInstance().courses) {
+				if(c.getCode()== code) {
+					return true;
+				}
+			}
+			return false;
+		}
 		
-//		public List<Course> courses() {
-//					return CourseTable.getInstance().courses;
-//		}
+		public List<Course> courses() {
+					return CourseTable.getInstance().courses;
+		}
 		
-//		public Student createStudent(String name, int studentNumber, String status){
-//			return createStudent(name, studentNumber, "", "", status);
-//		}
+		public Student createStudent(String name, int studentNumber, String status){
+			return createStudent(name, studentNumber, "", "", status);
+		}
 		
-//		public Student createStudent(String name, int studentNumber, String email,String password,String status) {
-//			if (termState != TermState.CREATE_STUDENT_COURSE_STATE || termState == TermState.COURSE_REGISTRATION_STATE) {
-//							String errMsg = "Student cannot be created because student creation period is over";
-//							throw new IllegalStateException(errMsg);
-//						}
-//			if (studentExist(studentNumber)) {
-//							String errMsg = String.format("Student with student_number %d already exists", studentNumber);
-//							throw new IllegalArgumentException(errMsg);
-//						}
-//			Student student = new Student(name, studentNumber, status);
-//			student.setEmail(email);
-//			student.setPassword(password);
-//			StudentTable.getInstance().add(student);
-//			logger.info(String.format("Student is created by clerk and added into student table"));
-//			return student;
-//		}
+		public Student createStudent(String name, int studentNumber, String email,String password,String status) {
+			if (termState != TermState.CREATE_STUDENT_COURSE_STATE || termState == TermState.COURSE_REGISTRATION_STATE) {
+							String errMsg = "Student cannot be created because student creation period is over";
+							throw new IllegalStateException(errMsg);
+						}
+			if (studentExist(studentNumber)) {
+							String errMsg = String.format("Student with student_number %d already exists", studentNumber);
+							throw new IllegalArgumentException(errMsg);
+						}
+			Student student = new Student(name, studentNumber, status);
+			student.setEmail(email);
+			student.setPassword(password);
+			StudentTable.getInstance().add(student);
+			logger.info(String.format("Student is created by clerk and added into student table"));
+			return student;
+		}
 		
-//		public List<Student> students() {
-//					return StudentTable.getInstance().students;
-//		}
+		public List<Student> students() {
+					return StudentTable.getInstance().students;
+		}
 		
 		public static University getInstance() {
 			return INSTANCE;
@@ -179,45 +179,45 @@ public class University implements TermEventListener{
 					return passRate;
 		}
 		
-//		public boolean studentExist(int studentNumber) {
-//					for (Student s : StudentTable.getInstance().students) {
-//						if (s.getStudentNumber() == studentNumber) {
-//							return true;
-//						}
-//					}
-//					return false;
-//		}
+		public boolean studentExist(int studentNumber) {
+					for (Student s : StudentTable.getInstance().students) {
+						if (s.getStudentNumber() == studentNumber) {
+							return true;
+						}
+					}
+					return false;
+		}
 		
 		public void selectCourseForStudent(Student student, Course course) {
 					student.selectCourse(course);
 		}
 		
-//		public void cancelCourse(Course course) {
-//			if(termState == TermState.CREATE_STUDENT_COURSE_STATE) {	
-//				List<Student> students = students();
-//			 
-//				for (Student s : students) {
-//					s.currentCourses().remove(course);
-//					s.selectedCourses().remove(course);
-//				}
-//				course.students().clear();
-//				logger.info(String.format("Course has been canceled by clerk and removed from the course table"));
-//			}
-//			else {
-//				throw new IllegalStateException();
-//			}
-//		}
+		public void cancelCourse(Course course) {
+			if(termState == TermState.CREATE_STUDENT_COURSE_STATE) {	
+				List<Student> students = students();
+			 
+				for (Student s : students) {
+					s.currentCourses().remove(course);
+					s.selectedCourses().remove(course);
+				}
+				course.students().clear();
+				logger.info(String.format("Course has been canceled by clerk and removed from the course table"));
+			}
+			else {
+				throw new IllegalStateException();
+			}
+		}
 		
-//		public void destroyCourse(Course course) {
-//			List<Student> students = course.students();
-//			 
-//			for (Student s : students) {
-//				s.currentCourses().remove(course);
-//				s.selectedCourses().remove(course);
-//			}
-//			course.students().clear();
-//					CourseTable.getInstance().courses.remove(course);
-//		}
+		public void destroyCourse(Course course) {
+			List<Student> students = course.students();
+			 
+			for (Student s : students) {
+				s.currentCourses().remove(course);
+				s.selectedCourses().remove(course);
+			}
+			course.students().clear();
+					CourseTable.getInstance().courses.remove(course);
+		}
 		
 		public boolean deregisterCourse(Course course, Student student) {
 					if (termState == TermState.TERM_PROPERLY_STARTED_STATE) {
@@ -228,23 +228,23 @@ public class University implements TermEventListener{
 					}
 		}
 		
-//		public void deleteStudent(Student student) {
-//			if(termState == TermState.CREATE_STUDENT_COURSE_STATE) {	
-//				StudentTable.getInstance().students.remove(student);
-//					
-//					List<Course> courses = new ArrayList<>();
-//					courses.addAll(student.currentCourses());
-//					courses.addAll(student.selectedCourses());
-//					
-//					for (Course c : courses) {
-//						c.students().remove(student);
-//					}
-//					logger.info(String.format("Student has been deleted by clerk and removed from the student list"));
-//			}
-//			else {
-//				throw new IllegalStateException("Too late to delete student");
-//			}
-//		}
+		public void deleteStudent(Student student) {
+			if(termState == TermState.CREATE_STUDENT_COURSE_STATE) {	
+				StudentTable.getInstance().students.remove(student);
+					
+					List<Course> courses = new ArrayList<>();
+					courses.addAll(student.currentCourses());
+					courses.addAll(student.selectedCourses());
+					
+					for (Course c : courses) {
+						c.students().remove(student);
+					}
+					logger.info(String.format("Student has been deleted by clerk and removed from the student list"));
+			}
+			else {
+				throw new IllegalStateException("Too late to delete student");
+			}
+		}
 		
 		public void submitAssignMark(Course course, Student student) {
 			if (course == null || student == null) {

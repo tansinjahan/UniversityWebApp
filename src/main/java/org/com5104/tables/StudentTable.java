@@ -10,7 +10,7 @@ public class StudentTable {
 	
 	private static final StudentTable INSTANCE = new StudentTable();
 	
-	List<Student> students = new ArrayList<>();
+	public List<Student> students = new ArrayList<>();
 	
 	private StudentTable() {}
 	
@@ -44,13 +44,13 @@ public class StudentTable {
 			return null;
 	}
 	
-//	public static void createFakeStudent() {
-//		 		Student student1 = University.getInstance().createStudent("Jim Gordon", 123123,"Part Time");
-//		 		student1.setEmail("jim@gotham");
-//		 		student1.setPassword("12345");
-//		 		
-//		 		Student student2 = University.getInstance().createStudent("Lee Thompkins", 231231,"Full time");
-//		 		student2.setEmail("lee@gotham");
-//		 		student2.setPassword("12345");
-//		 	}
+	public static void createFakeStudent() {
+		 		Student student1 = University.getInstance().createStudent("Jim Gordon", 123123,"Part Time");
+		 		student1.setEmail("jim@gotham");
+		 		student1.setPassword("12345");
+		 		
+		 		Student student2 = University.getInstance().createStudent("Lee Thompkins", 231231,"Full time");
+		 		student2.setEmail("lee@gotham");
+		 		student2.setPassword("12345");
+		 	}
 }

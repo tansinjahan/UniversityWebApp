@@ -39,7 +39,7 @@
 	</h1>
 			
 		<form:form method="POST" action="/process_createCourse" modelAttribute="createCourseForm">
-             <table>
+             <table id="loginTable">
                 <tr>
                     <td><form:label path="title">Course Title</form:label></td>
                     <td><form:input path="title"/></td>
