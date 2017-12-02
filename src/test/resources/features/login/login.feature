@@ -1,5 +1,10 @@
-Feature: Google search
+Feature: Login
  @RunThis
-  Scenario: User visit google search page
-    When  a user visit Google.ca
-    Then the use sees "Login Page"
+  Scenario: Clerk logging in
+    When the clerk visits login page 
+    And enters "clerk" and "password"
+    Then the clerk sees clerk's home page
+  Scenario: Student logging in
+    When the student visits login page 
+    And enters username and password
+    Then the student sees student's home page
