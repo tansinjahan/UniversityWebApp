@@ -73,7 +73,7 @@
                     <td><form:input path="project"/></td>
                 </tr>
                 <tr>
-                    <td><input type="submit" value="Submit"/></td>
+                    <td><input type="submit" id = "courseSubmit" value="Submit"/></td>
                 </tr>
             </table>
         </form:form>

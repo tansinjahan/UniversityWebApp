@@ -35,7 +35,7 @@
 	<div class="container">
 
 	<h1>
-		Create course
+		Create Student
 	</h1>
 		<form:form method="POST" action="/create_student" modelAttribute="createStudentForm">
              <table id="createStudentTable">
@@ -61,7 +61,7 @@
                     <td><form:input path="studentStatus"/></td>
                 </tr>
                 <tr>
-                    <td><input type="submit" value="Submit"/></td>
+                    <td><input type="submit" id = "studentSubmit" value="Submit"/></td>
                 </tr>
             </table>
         </form:form>

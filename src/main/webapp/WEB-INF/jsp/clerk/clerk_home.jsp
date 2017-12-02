@@ -40,7 +40,7 @@
 			<a href="create_course">Create Course</a>
 			<a href="create_student">Create Student</a>
 			<a href="delete_course">Delete Course</a>
-			<a href="delete_student">Delete Course</a>
+			<a href="delete_student">Delete Student</a>
 	</div>
 	<!-- /.container -->
 

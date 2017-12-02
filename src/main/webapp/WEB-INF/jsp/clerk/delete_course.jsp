@@ -33,23 +33,21 @@
 	</nav>
 
 	<div class="container">
-		<h1><span id="test">Login Page</span></h1>
-		<form:form method="POST" action="/login" modelAttribute="loginForm">
-             <table id="login">
+
+	<h1>
+		Delete Course
+	</h1>
+		<form:form method="POST" action="/delete_course" modelAttribute="deleteCourseForm">
+             <table id="deleteCourseTable">
                 <tr>
-                    <td><form:label path="userName">Username</form:label></td>
-                    <td><form:input path="userName"/></td>
+                    <td><form:label path="code">Course Code</form:label></td>
+                    <td><form:input path="code"/></td>
                 </tr>
                 <tr>
-                    <td><form:label path="passWord">Password</form:label></td>
-                    <td><form:input path="passWord"/></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" id ="loginSubmit" value="Submit"/></td>
+                    <td><input type="submit" id = "deleteCourseSubmit" value="Submit"/></td>
                 </tr>
             </table>
         </form:form>
-
 	</div>
 	<!-- /.container -->
 

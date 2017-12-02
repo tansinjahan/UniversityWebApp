@@ -230,7 +230,8 @@ public class University implements TermEventListener{
 		
 		public void deleteStudent(Student student) {
 			if(termState == TermState.CREATE_STUDENT_COURSE_STATE) {	
-				StudentTable.getInstance().getStudents().remove(student);
+		
+					StudentTable.getInstance().getStudents().remove(student);
 					
 					List<Course> courses = new ArrayList<>();
 					courses.addAll(student.currentCourses());
@@ -240,7 +241,8 @@ public class University implements TermEventListener{
 						c.students().remove(student);
 					}
 					logger.info(String.format("Student has been deleted by clerk and removed from the student list"));
-			}
+				
+			}		
 			else {
 				throw new IllegalStateException("Too late to delete student");
 			}

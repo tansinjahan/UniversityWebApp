@@ -6,6 +6,7 @@ import org.com5104.models.Course;
 import org.com5104.models.CourseWebModel;
 import org.com5104.models.Login;
 import org.com5104.models.Student;
+import org.com5104.models.StudentWebModel;
 import org.com5104.models.TestTermSimulator;
 import org.com5104.models.University;
 import org.com5104.tables.CourseTable;
@@ -33,7 +34,7 @@ public class ClerkController {
 			BindingResult result, Model model, final RedirectAttributes redirectAttributes,
 			HttpServletRequest request) {
 		if (request.getMethod().contains("GET")) {
-			CourseWebModel dcourse=new CourseWebModel();
+			CourseWebModel dcourse = new CourseWebModel();
 			dcourse.setTitle("data");
 			dcourse.setCode(112345);
 			dcourse.setCapacity(34);
@@ -51,36 +52,90 @@ public class ClerkController {
 						course.getCapacity(), course.getFinalExam(), course.getAssignment(), course.getMidterm(),
 						course.getPrerequisite(), course.getProject());
 				System.out.printf("Course is created with %s and %d", acourse.getTitle(), acourse.getCode());
-				return new ModelAndView("clerk/clerk_home", "", null);
+				return new ModelAndView("clerk/clerk_home", "", acourse);
 
 			} catch (Exception e) {
-				System.out.println("Course can not be created" +e.getMessage());
+				System.out.println("Course can not be created" + e.getMessage());
 				return new ModelAndView("clerk/clerk_home", "", null);
 			}
 		}
 	}
 
 	@RequestMapping(value = "/create_student", method = { RequestMethod.GET, RequestMethod.POST })
-	public ModelAndView createStudent(@ModelAttribute("createStudentForm") @Validated Student student,
+	public ModelAndView createStudent(@ModelAttribute("createStudentForm") @Validated StudentWebModel student,
 			BindingResult result, Model model, final RedirectAttributes redirectAttributes,
 			HttpServletRequest request) {
 		if (request.getMethod().contains("GET")) {
-			System.out.println("******************************");
-			return new ModelAndView("clerk/create_student", "createStudentForm", new Student());
+			StudentWebModel astudent = new StudentWebModel();
+			astudent.setStudentName("Tithy");
+			astudent.setStudentNumber(56789);
+			astudent.setEmail("tansin@gmail");
+			astudent.setPassword("12345");
+			astudent.setstudentStatus("part time");
+			return new ModelAndView("clerk/create_student", "createStudentForm", astudent);
 		} else {
 			if (result.hasErrors()) {
 				System.out.println("*************form error*****************");
-				return new ModelAndView("clerk/create_student", "createStudentForm", student);
+				System.out.println("Student can not be created");
+				return new ModelAndView("clerk/clerk_home");
 			} else {
-				System.out.println("**************************" + student.getEmail());
-				StudentTable.getInstance().add(student);
-				for (Student aStudent : StudentTable.getInstance().getStudents()) {
-					System.out.println("===========KKKKK=============>>>" + aStudent.getEmail());
-				}
-				return new ModelAndView("clerk/clerk_home", "", null);
+				TestTermSimulator test = new TestTermSimulator(University.getInstance());
+				test.termCreated();
+				Student newStudent = University.getInstance().createStudent(student.getStudentName(),
+						student.getStudentNumber(), student.getEmail(), student.getPassword(), student.getstudentStatus());
+				System.out.printf("Student is created with %s and %s", newStudent.getStudentName(),
+						newStudent.getStudentNumber());
+				return new ModelAndView("clerk/create_student", "createStudentForm", newStudent);
 			}
-		}
 
+		}
+	}
+	
+	@RequestMapping(value = "/delete_student", method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView deleteStudent(@ModelAttribute("deleteStudentForm") @Validated StudentWebModel student,
+			BindingResult result, Model model, final RedirectAttributes redirectAttributes,
+			HttpServletRequest request) {
+		if (request.getMethod().contains("GET")) {
+			return new ModelAndView("clerk/delete_student");
+		} else {
+			if (result.hasErrors()) {
+				System.out.println("*************form error*****************");
+				System.out.println("Student can not be deleted");
+				return new ModelAndView("clerk/clerk_home");
+			} else {
+				TestTermSimulator test = new TestTermSimulator(University.getInstance());
+				test.termCreated();
+				Student dStudent = StudentTable.getInstance().findByStudentNumber(student.getStudentNumber()); 
+				University.getInstance().deleteStudent(dStudent);
+				System.out.printf("Student is deleted successfully");
+				return new ModelAndView("clerk/clerk_home", "deleteStudentForm", null);
+			}
+
+		}
+	}
+	
+	@RequestMapping(value = "/delete_course", method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView deleteCourse(@ModelAttribute("deleteCourseForm") @Validated CourseWebModel course,
+			BindingResult result, Model model, final RedirectAttributes redirectAttributes,
+			HttpServletRequest request) {
+		if (request.getMethod().contains("GET")) {
+			return new ModelAndView("clerk/delete_course");
+		} else {
+			if (result.hasErrors()) {
+				System.out.println("*************form error*****************");
+				System.out.println("Course can not be deleted");
+				return new ModelAndView("clerk/clerk_home");
+			} else {
+				TestTermSimulator test = new TestTermSimulator(University.getInstance());
+				test.termCreated();
+				Course dCourse = CourseTable.getInstance().findCourseByCode(course.getCode()); 
+				System.out.printf("course code", dCourse.getCode());
+				University.getInstance().cancelCourse(dCourse);
+				System.out.printf("Course is deleted successfully");
+				return new ModelAndView("clerk/clerk_home");
+			}
+
+		}
 	}
 
 }
