@@ -33,7 +33,7 @@
 	</nav>
 
 	<div class="container">
-
+		<h1><span id="test">Login Page</span></h1>
 		<form:form method="POST" action="/login" modelAttribute="loginForm">
              <table id="login">
                 <tr>

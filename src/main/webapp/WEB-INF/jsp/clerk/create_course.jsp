@@ -49,6 +49,30 @@
                     <td><form:input path="code"/></td>
                 </tr>
                 <tr>
+                    <td><form:label path="capacity">capacity</form:label></td>
+                    <td><form:input path="capacity"/></td>
+                </tr>
+                <tr>
+                    <td><form:label path="finalExam">Final</form:label></td>
+                    <td><form:input path="finalExam"/></td>
+                </tr>
+                <tr>
+                    <td><form:label path="assignment">Assignment</form:label></td>
+                    <td><form:input path="assignment"/></td>
+                </tr>
+                <tr>
+                    <td><form:label path="midterm">Midterm</form:label></td>
+                    <td><form:input path="midterm"/></td>
+                </tr>
+                <tr>
+                    <td><form:label path="prerequisite">prerequisite</form:label></td>
+                    <td><form:input path="prerequisite"/></td>
+                </tr>
+                <tr>
+                    <td><form:label path="project">Project</form:label></td>
+                    <td><form:input path="project"/></td>
+                </tr>
+                <tr>
                     <td><input type="submit" value="Submit"/></td>
                 </tr>
             </table>
