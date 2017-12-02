@@ -27,15 +27,14 @@ public class Course {
 	Map<Integer, Integer> studentIdVsMidTermMarks = new HashMap<>();
 	Map<Integer, Integer> studentIdVsFinalMark = new HashMap<>();
 	Map<Integer, Integer> studentIdVsMarksMap = new HashMap<>();
+	
 	public Course() {
 		
 	}
 	
-
-	
-	public Course(String title, int code) {
+	public Course(String title, int capsize) {
 		 		this.title = title;
-		 		this.code = code;
+		 		this.capsize = capsize;
 		 	}
 	
 	public void setCode(int code) {

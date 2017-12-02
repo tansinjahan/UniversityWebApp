@@ -38,8 +38,8 @@
 		Create course
 	</h1>
 			
-		<form:form method="POST" action="/process_createCourse" modelAttribute="createCourseForm">
-             <table id="loginTable">
+		<form:form method="POST" action="/create_course" modelAttribute="createCourseForm">
+             <table id="createCourseTable">
                 <tr>
                     <td><form:label path="title">Course Title</form:label></td>
                     <td><form:input path="title"/></td>

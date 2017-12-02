@@ -5,8 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.validation.constraints.NotNull;
+
 import org.apache.log4j.Logger;
 import org.com5104.utilities.Trace;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 
 
@@ -15,7 +19,9 @@ public class Student {
 	private String studentName;
 	private boolean fullTime;
 	private int maxCourseCount;
-	
+	private String studentStatus;
+	@NotEmpty(message = "Please enter your email.")
+    @Email(message = "Not a valid email")
 	private String email;
 	private String password;
 	
@@ -27,14 +33,25 @@ public class Student {
 	
 	Logger logger = Trace.getInstance().getLogger(this);
 	
+	public Student() {
+		
+	}
+	
 	public Student(String name,int studentID, String studentStatus){
 		this.studentNumber=studentID;
 		this.studentName=name;
+		this.studentStatus=studentStatus;
 		setMaxCourseOfStudent(studentStatus);
 	}
 	
-	public String getName() {
+	
+
+	public String getStudentName() {
 		return studentName;
+	}
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
 	}
 
 	public int getStudentNumber() {
@@ -53,6 +70,14 @@ public class Student {
 				this.email = email;
 			}
 			
+	public String getStudentStatus() {
+		return studentStatus;
+	}
+
+	public void setStudentStatus(String studentStatus) {
+		this.studentStatus = studentStatus;
+	}
+
 	public void setPassword(String password) {
 				this.password = password;
 			}

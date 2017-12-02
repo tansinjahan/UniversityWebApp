@@ -34,22 +34,37 @@
 
 	<div class="container">
 
-		<form:form method="POST" action="/login" modelAttribute="loginForm">
-             <table id="login">
+	<h1>
+		Create course
+	</h1>
+		<form:form method="POST" action="/create_student" modelAttribute="createStudentForm">
+             <table id="createStudentTable">
                 <tr>
-                    <td><form:label path="userName">Username</form:label></td>
-                    <td><form:input path="userName"/></td>
+                    <td><form:label path="studentName">Student Name</form:label></td>
+                    <td><form:input path="studentName"/></td>
                 </tr>
                 <tr>
-                    <td><form:label path="passWord">Password</form:label></td>
-                    <td><form:input path="passWord"/></td>
+                    <td><form:label path="studentNumber">Student Number</form:label></td>
+                    <td><form:input path="studentNumber"/></td>
+                </tr>
+                <tr>
+                    <td><form:label path="email">Student email</form:label></td>
+                    <td><form:input path="email"/></td>
+                    <td><form:errors path="email" cssClass="error"/></td>
+                </tr>
+                <tr>
+                    <td><form:label path="password">Student password</form:label></td>
+                    <td><form:input path="password"/></td>
+                </tr>
+                <tr>
+                    <td><form:label path="studentStatus">Student status</form:label></td>
+                    <td><form:input path="studentStatus"/></td>
                 </tr>
                 <tr>
                     <td><input type="submit" value="Submit"/></td>
                 </tr>
             </table>
         </form:form>
-
 	</div>
 	<!-- /.container -->
 
