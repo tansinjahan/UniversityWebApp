@@ -38,11 +38,11 @@
              <table id="login">
                 <tr>
                     <td><form:label path="userName">Username</form:label></td>
-                    <td><form:input path="userName"/></td>
+                    <td><form:input path="userName" id="user"/></td>
                 </tr>
                 <tr>
                     <td><form:label path="passWord">Password</form:label></td>
-                    <td><form:input path="passWord"/></td>
+                    <td><form:input path="passWord" id="password"/></td>
                 </tr>
                 <tr>
                     <td><input type="submit" id ="loginSubmit" value="Submit"/></td>

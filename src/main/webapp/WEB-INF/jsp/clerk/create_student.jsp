@@ -41,24 +41,24 @@
              <table id="createStudentTable">
                 <tr>
                     <td><form:label path="studentName">Student Name</form:label></td>
-                    <td><form:input path="studentName"/></td>
+                    <td><form:input path="studentName" id="studentName"/></td>
                 </tr>
                 <tr>
                     <td><form:label path="studentNumber">Student Number</form:label></td>
-                    <td><form:input path="studentNumber"/></td>
+                    <td><form:input path="studentNumber" id="studentNumber"/></td>
                 </tr>
                 <tr>
                     <td><form:label path="email">Student email</form:label></td>
-                    <td><form:input path="email"/></td>
+                    <td><form:input path="email" id="email"/></td>
                     <td><form:errors path="email" cssClass="error"/></td>
                 </tr>
                 <tr>
                     <td><form:label path="password">Student password</form:label></td>
-                    <td><form:input path="password"/></td>
+                    <td><form:input path="password" id="password"/></td>
                 </tr>
                 <tr>
                     <td><form:label path="studentStatus">Student status</form:label></td>
-                    <td><form:input path="studentStatus"/></td>
+                    <td><form:input path="studentStatus" id="studentStatus"/></td>
                 </tr>
                 <tr>
                     <td><input type="submit" id = "studentSubmit" value="Submit"/></td>

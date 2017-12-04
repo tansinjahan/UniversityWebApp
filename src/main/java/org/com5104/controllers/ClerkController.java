@@ -66,13 +66,13 @@ public class ClerkController {
 			BindingResult result, Model model, final RedirectAttributes redirectAttributes,
 			HttpServletRequest request) {
 		if (request.getMethod().contains("GET")) {
-			StudentWebModel astudent = new StudentWebModel();
-			astudent.setStudentName("Tithy");
-			astudent.setStudentNumber(56789);
-			astudent.setEmail("tansin@gmail");
-			astudent.setPassword("12345");
-			astudent.setstudentStatus("part time");
-			return new ModelAndView("clerk/create_student", "createStudentForm", astudent);
+//			StudentWebModel astudent = new StudentWebModel();
+//			astudent.setStudentName("Tithy");
+//			astudent.setStudentNumber(56789);
+//			astudent.setEmail("tansin@gmail");
+//			astudent.setPassword("12345");
+//			astudent.setstudentStatus("part time");
+			return new ModelAndView("clerk/create_student", "createStudentForm", student);
 		} else {
 			if (result.hasErrors()) {
 				System.out.println("*************form error*****************");
@@ -85,7 +85,7 @@ public class ClerkController {
 						student.getStudentNumber(), student.getEmail(), student.getPassword(), student.getstudentStatus());
 				System.out.printf("Student is created with %s and %s", newStudent.getStudentName(),
 						newStudent.getStudentNumber());
-				return new ModelAndView("clerk/create_student", "createStudentForm", newStudent);
+				return new ModelAndView("clerk/clerk_home", "createStudentForm", newStudent);
 			}
 
 		}
