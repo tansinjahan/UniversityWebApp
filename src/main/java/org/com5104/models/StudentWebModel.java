@@ -1,11 +1,13 @@
 package org.com5104.models;
 
+import javax.validation.constraints.NotNull;
+
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class StudentWebModel {
 	private String studentName;
-	@NotEmpty(message = "Please enter student number")
+	@NotNull(message = "Please enter student number")
 	private Integer studentNumber;
 	private String studentStatus;
 	@NotEmpty(message = "Please enter student email.")

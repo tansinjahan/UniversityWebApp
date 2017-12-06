@@ -76,7 +76,8 @@ public class ClerkController {
 						student.getStudentNumber(), student.getEmail(), student.getPassword(), student.getstudentStatus());
 				System.out.printf("Student is created with %s and %s", newStudent.getStudentName(),
 						newStudent.getStudentNumber());
-				return new ModelAndView("clerk/clerk_home", "createStudentForm", newStudent);
+				request.setAttribute("message", "Student successfully created!!");
+				return new ModelAndView("clerk/clerk_home");
 			}
 
 		}
