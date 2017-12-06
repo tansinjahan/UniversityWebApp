@@ -37,8 +37,8 @@
 			<span id="test">Login Page</span>
 		</h1>
 		<c:if test="${!empty message}">
-			<div class="alert alert-danger">
-				<strong>Danger!</strong> ${message}.
+			<div id="messages" class="alert alert-danger">
+				<strong>${message}</strong>
 			</div>
 		</c:if>
 		<form:form method="POST" action="/login" modelAttribute="loginForm">

@@ -45,7 +45,8 @@ public class LoginController {
 			}else {
 				System.out.println("************Tithy**********************" + login.getUserName());
 				model.addAttribute("loginForm", login);
-				return new ModelAndView("login", "loginForm", login);
+				redirectAttributes.addFlashAttribute("message", "Invalid username or password");
+				return new ModelAndView("redirect:/login");
 			}
 		}
 	}
