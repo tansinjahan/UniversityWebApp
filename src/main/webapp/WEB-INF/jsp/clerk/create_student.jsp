@@ -37,6 +37,11 @@
 	<h1>
 		Create Student
 	</h1>
+		<c:if test="${!empty message}">
+ 			<div id="message" class="alert alert-danger">
+ 				${message}.
+ 			</div>
+ 		</c:if>
 		<form:form method="POST" action="/create_student" modelAttribute="createStudentForm">
              <table id="createStudentTable">
                 <tr>
@@ -50,7 +55,6 @@
                 <tr>
                     <td><form:label path="email">Student email</form:label></td>
                     <td><form:input path="email" id="email"/></td>
-                    <td><form:errors path="email" cssClass="error"/></td>
                 </tr>
                 <tr>
                     <td><form:label path="password">Student password</form:label></td>

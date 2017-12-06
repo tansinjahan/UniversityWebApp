@@ -1,10 +1,17 @@
 package org.com5104.models;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class StudentWebModel {
 	private String studentName;
+	@NotEmpty(message = "Please enter student number")
 	private Integer studentNumber;
 	private String studentStatus;
+	@NotEmpty(message = "Please enter student email.")
+	@Email(message = "Not a valid email")
 	private String email;
+	@NotEmpty(message = "Please enter student password.")
 	private String password;
 
 	public String getStudentName() {

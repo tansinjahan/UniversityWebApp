@@ -14,6 +14,7 @@ import org.com5104.tables.StudentTable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -60,9 +61,14 @@ public class ClerkController {
 			return new ModelAndView("clerk/create_student", "createStudentForm", student);
 		} else {
 			if (result.hasErrors()) {
-				System.out.println("*************form error*****************");
-				System.out.println("Student can not be created");
-				return new ModelAndView("clerk/clerk_home");
+				String message = "";
+  				System.out.println("*************form error*****************");
+  				System.out.println("Student can not be created");
+  				for (ObjectError error : result.getAllErrors()) {
+  					message = message + error.getDefaultMessage() + System.lineSeparator();
+ 				}
+ 				request.setAttribute("message", message);
+ 				return new ModelAndView("clerk/create_student");
 			} else {
 				TestTermSimulator test = new TestTermSimulator(University.getInstance());
 				test.termCreated();
