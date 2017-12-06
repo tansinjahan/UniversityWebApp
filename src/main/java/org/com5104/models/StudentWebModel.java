@@ -2,7 +2,7 @@ package org.com5104.models;
 
 public class StudentWebModel {
 	private String studentName;
-	private int studentNumber;
+	private Integer studentNumber;
 	private String studentStatus;
 	private String email;
 	private String password;
@@ -15,11 +15,11 @@ public class StudentWebModel {
 		this.studentName = studentName;
 	}
 
-	public int getStudentNumber() {
+	public Integer getStudentNumber() {
 		return studentNumber;
 	}
 
-	public void setStudentNumber(int studentNumber) {
+	public void setStudentNumber(Integer studentNumber) {
 		this.studentNumber = studentNumber;
 	}
 

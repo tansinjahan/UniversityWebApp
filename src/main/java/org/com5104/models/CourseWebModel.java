@@ -2,11 +2,11 @@ package org.com5104.models;
 
 public class CourseWebModel {
 	private String title;
-	private int code;
-	private int capacity;
+	private Integer code;
+	private Integer capacity;
 	private Boolean finalExam;
-	private int assignment;
-	private int midterm;
+	private Integer assignment;
+	private Integer midterm;
 	private Boolean prerequisite;
 	private Boolean project;
 
@@ -18,19 +18,19 @@ public class CourseWebModel {
 		this.title = title;
 	}
 
-	public int getCode() {
+	public Integer getCode() {
 		return code;
 	}
 
-	public void setCode(int code) {
+	public void setCode(Integer code) {
 		this.code = code;
 	}
 
-	public int getCapacity() {
+	public Integer getCapacity() {
 		return capacity;
 	}
 
-	public void setCapacity(int capacity) {
+	public void setCapacity(Integer capacity) {
 		this.capacity = capacity;
 	}
 
@@ -42,19 +42,19 @@ public class CourseWebModel {
 		this.finalExam = finalExam;
 	}
 
-	public int getAssignment() {
+	public Integer getAssignment() {
 		return assignment;
 	}
 
-	public void setAssignment(int assignment) {
+	public void setAssignment(Integer assignment) {
 		this.assignment = assignment;
 	}
 
-	public int getMidterm() {
+	public Integer getMidterm() {
 		return midterm;
 	}
 
-	public void setMidterm(int midterm) {
+	public void setMidterm(Integer midterm) {
 		this.midterm = midterm;
 	}
 

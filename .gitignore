@@ -1,1 +1,6 @@
 target/
+.settings/
+phantomjs/
+output/
+.project
+.classpath
