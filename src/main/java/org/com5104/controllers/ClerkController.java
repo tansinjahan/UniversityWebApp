@@ -44,10 +44,12 @@ public class ClerkController {
 						course.getCapacity(), course.getFinalExam(), course.getAssignment(), course.getMidterm(),
 						course.getPrerequisite(), course.getProject());
 				System.out.printf("Course is created with %s and %d", acourse.getTitle(), acourse.getCode());
+				request.setAttribute("message", "Course was successfully created!!!");
 				return new ModelAndView("clerk/clerk_home", "", acourse);
 
 			} catch (Exception e) {
 				System.out.println("Course can not be created" + e.getMessage());
+				request.setAttribute("message", "Course was not created!!!");
 				return new ModelAndView("clerk/clerk_home", "", null);
 			}
 		}
@@ -84,54 +86,44 @@ public class ClerkController {
 	}
 	
 	@RequestMapping(value = "/delete_student", method = { RequestMethod.GET, RequestMethod.POST })
-	public ModelAndView deleteStudent(@ModelAttribute("deleteStudentForm") @Validated StudentWebModel student,
-			BindingResult result, Model model, final RedirectAttributes redirectAttributes,
+	public ModelAndView deleteStudent(final RedirectAttributes redirectAttributes,
 			HttpServletRequest request) {
 		if (request.getMethod().contains("GET")) {
 			return new ModelAndView("clerk/delete_student");
 		} else {
-			if (result.hasErrors()) {
-				String message = "";
+			if (request.getParameter("studentNumber").isEmpty()) {
 				System.out.println("*************form error*****************");
 				System.out.println("Student can not be deleted");
-  				for (ObjectError error : result.getAllErrors()) {
-  					message = message + error.getDefaultMessage() + System.lineSeparator();
- 				}
- 				request.setAttribute("message", message);
-				return new ModelAndView("clerk/clerk_home");
+				request.setAttribute("message", "Please enter student number");
+				return new ModelAndView("clerk/delete_student");
 			} else {
 				TestTermSimulator test = new TestTermSimulator(University.getInstance());
 				test.termCreated();
-				Student dStudent = StudentTable.getInstance().findByStudentNumber(student.getStudentNumber()); 
+				Student dStudent = StudentTable.getInstance().findByStudentNumber(Integer.parseInt(request.getParameter("studentNumber"))); 
 				University.getInstance().deleteStudent(dStudent);
 				System.out.printf("Student is deleted successfully");
 				request.setAttribute("message", "Student is deleted successfully!!!");
-				return new ModelAndView("clerk/clerk_home", "deleteStudentForm", null);
+				return new ModelAndView("clerk/clerk_home");
 			}
 
 		}
 	}
 	
 	@RequestMapping(value = "/delete_course", method = { RequestMethod.GET, RequestMethod.POST })
-	public ModelAndView deleteCourse(@ModelAttribute("deleteCourseForm") @Validated CourseWebModel course,
-			BindingResult result, Model model, final RedirectAttributes redirectAttributes,
+	public ModelAndView deleteCourse(final RedirectAttributes redirectAttributes,
 			HttpServletRequest request) {
 		if (request.getMethod().contains("GET")) {
 			return new ModelAndView("clerk/delete_course");
 		} else {
-			if (result.hasErrors()) {
-				String message = "";
+			if (request.getParameter("code").isEmpty()) {
 				System.out.println("*************form error*****************");
 				System.out.println("Course can not be deleted");
-  				for (ObjectError error : result.getAllErrors()) {
-  					message = message + error.getDefaultMessage() + System.lineSeparator();
- 				}
- 				request.setAttribute("message", message);
-				return new ModelAndView("clerk/clerk_home");
+				request.setAttribute("message", "Please enter course code");
+				return new ModelAndView("clerk/delete_course");
 			} else {
 				TestTermSimulator test = new TestTermSimulator(University.getInstance());
 				test.termCreated();
-				Course dCourse = CourseTable.getInstance().findCourseByCode(course.getCode()); 
+				Course dCourse = CourseTable.getInstance().findCourseByCode(Integer.parseInt(request.getParameter("code"))); 
 				System.out.printf("course code", dCourse.getCode());
 				University.getInstance().cancelCourse(dCourse);
 				System.out.printf("Course is deleted successfully");

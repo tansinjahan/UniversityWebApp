@@ -1,5 +1,6 @@
 target/
 phantomjs/
 output/
+logs/*.log
 .project
 .classpath

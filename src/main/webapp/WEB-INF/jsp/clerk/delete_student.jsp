@@ -38,12 +38,11 @@
 		<c:if test="${!empty message}">
 			<div id="message" class="alert alert-danger">${message}.</div>
 		</c:if>
-		<form:form method="POST" action="/delete_student"
-			modelAttribute="deleteStudentForm">
+		<form:form method="POST" action="/delete_student">
 			<table id="deleteStudentTable">
 				<tr>
-					<td><form:label path="studentNumber">Student Number</form:label></td>
-					<td><form:input path="studentNumber" /></td>
+					<td><label for="studentNumber">Student Number</label></td>	
+					<td><input type="text" id="studentNumber" name="studentNumber" value=""/></td>					
 				</tr>
 				<tr>
 					<td><input type="submit" id="deleteStudentSubmit"
