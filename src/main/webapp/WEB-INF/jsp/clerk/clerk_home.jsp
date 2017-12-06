@@ -37,10 +37,11 @@
 	<h1>
 		Welcome to Clerk Home Page
 	</h1>
-			<a href="create_course"  id="createcourse">Create Course</a>
-			<a href="create_student" id="createstudent">Create Student</a>
-			<a href="delete_course" id="deletecourse">Delete Course</a>
-			<a href="delete_student" id="deletestudent">Delete Student</a>
+			<a href="create_course"  id="createcourse">Create Course<br></a>
+			<a href="create_student" id="createstudent">Create Student<br></a>
+			<a href="delete_course" id="deletecourse">Delete Course<br></a>
+			<a href="delete_student" id="deletestudent">Delete Student<br></a>
+			<a href="login" id="logout">Log Out</a>
 	</div>
 	<!-- /.container -->
 

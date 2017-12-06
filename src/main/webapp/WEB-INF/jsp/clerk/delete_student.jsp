@@ -47,6 +47,7 @@
                     <td><input type="submit" id = "deleteStudentSubmit" value="Submit"/></td>
                 </tr>
             </table>
+            <button><a href="login" id="logout">Log Out</a></button>
         </form:form>
 	</div>
 	<!-- /.container -->

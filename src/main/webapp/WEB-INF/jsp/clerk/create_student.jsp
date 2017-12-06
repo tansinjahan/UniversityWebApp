@@ -64,6 +64,7 @@
                     <td><input type="submit" id = "studentSubmit" value="Submit"/></td>
                 </tr>
             </table>
+            <button><a href="login" id="logout">Log Out</a></button>
         </form:form>
 	</div>
 	<!-- /.container -->

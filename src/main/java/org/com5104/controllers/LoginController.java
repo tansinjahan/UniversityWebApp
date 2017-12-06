@@ -4,7 +4,10 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.com5104.models.Course;
 import org.com5104.models.Login;
+import org.com5104.models.Student;
+import org.com5104.models.University;
 import org.com5104.tables.CourseTable;
+import org.com5104.tables.StudentTable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,22 +23,29 @@ public class LoginController {
 
 	@RequestMapping(value = "/login", method = { RequestMethod.GET, 
 			RequestMethod.POST })
-	public ModelAndView displayLogin(@ModelAttribute("createCourseForm") @Validated Login login,
+	public ModelAndView displayLogin(@ModelAttribute("loginForm") @Validated Login login,
 			BindingResult result, Model model,
 			final RedirectAttributes redirectAttributes, HttpServletRequest request) {
 		if(request.getMethod().contains("GET")) {
-			return new ModelAndView("login", "loginForm", new Login());
+			return new ModelAndView("login", "loginForm", login);
 		}else {
-			if(login.getUserName().equalsIgnoreCase("clerk")) {
+			if(login.getUserName().equalsIgnoreCase("clerk") && login.getPassWord().equalsIgnoreCase("admin")) {
 				System.out.println("***************Tansin*******************");
 				return new ModelAndView("clerk/clerk_home", "", null);
 			}else if(login.getUserName().contains("@")) {
-				System.out.println("**********************************");
-				return new ModelAndView("student/student_home", "", null);
+				Student currentStudent =StudentTable.getInstance().findByEmailPassword(login.getUserName(), login.getPassWord());
+				if(currentStudent!=null){
+					request.getSession().setAttribute("currentStudent", currentStudent);
+					System.out.println("**********************************");
+					return new ModelAndView("student/student_home", "", null);
+				}else {
+					redirectAttributes.addFlashAttribute("message", "Your username should be your email");
+					return new ModelAndView( "redirect:/login");
+				}	
 			}else {
 				System.out.println("************Tithy**********************" + login.getUserName());
 				model.addAttribute("loginForm", login);
-				return new ModelAndView("login", "", null);
+				return new ModelAndView("login", "loginForm", login);
 			}
 		}
 	}

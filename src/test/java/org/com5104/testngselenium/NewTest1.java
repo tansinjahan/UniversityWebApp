@@ -40,6 +40,17 @@ public class NewTest1 {
 		driver.findElement(By.id("studentSubmit")).click();
 	}
 	
+	/*@Test (dependsOnMethods=("ClerkLogin"))
+	public void CreateCourse() {
+		driver.findElement(By.id("createcourse")).click();
+		driver.findElement(By.id("studentName")).sendKeys("tithy");
+		driver.findElement(By.id("studentNumber")).sendKeys("56789");
+		driver.findElement(By.id("email")).sendKeys("tithy@gmail");
+		driver.findElement(By.id("password")).sendKeys("12345");
+		driver.findElement(By.id("studentStatus")).sendKeys("full time");
+		driver.findElement(By.id("studentSubmit")).click();
+	}*/
+	
 	@AfterTest
 	public void ShutDriver() {
 		driver.quit();

@@ -34,16 +34,7 @@ public class ClerkController {
 			BindingResult result, Model model, final RedirectAttributes redirectAttributes,
 			HttpServletRequest request) {
 		if (request.getMethod().contains("GET")) {
-			CourseWebModel dcourse = new CourseWebModel();
-			dcourse.setTitle("data");
-			dcourse.setCode(112345);
-			dcourse.setCapacity(34);
-			dcourse.setAssignment(2);
-			dcourse.setMidterm(1);
-			dcourse.setPrerequisite(true);
-			dcourse.setFinalExam(true);
-			dcourse.setProject(false);
-			return new ModelAndView("clerk/create_course", "createCourseForm", dcourse);
+			return new ModelAndView("clerk/create_course", "createCourseForm", course);
 		} else {
 			try {
 				TestTermSimulator test = new TestTermSimulator(University.getInstance());
@@ -66,12 +57,6 @@ public class ClerkController {
 			BindingResult result, Model model, final RedirectAttributes redirectAttributes,
 			HttpServletRequest request) {
 		if (request.getMethod().contains("GET")) {
-//			StudentWebModel astudent = new StudentWebModel();
-//			astudent.setStudentName("Tithy");
-//			astudent.setStudentNumber(56789);
-//			astudent.setEmail("tansin@gmail");
-//			astudent.setPassword("12345");
-//			astudent.setstudentStatus("part time");
 			return new ModelAndView("clerk/create_student", "createStudentForm", student);
 		} else {
 			if (result.hasErrors()) {

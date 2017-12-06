@@ -33,15 +33,20 @@
 	</nav>
 
 	<div class="container">
+		<h1><span id="deregisterHeader">DeRegister Course Page</span></h1>
+		<form:form method="POST" action="/deregister_course" modelAttribute="deregisterForm">
+             <table id="deregisterTable">
+                <tr>
+                    <td><form:label path="code">Input Course Code for Deregistration</form:label></td>
+                    <td><form:input path="code"/></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" id ="deregisterCodeSubmit" value="Submit"/></td>
+                </tr>
+            </table>
+            <button><a href="login" id="logout">Log Out</a></button>
+        </form:form>
 
-	<h1>
-		Welcome to Student Home Page
-	</h1>
-			<a href="register_course">Register Course<br></a>
-			<a href="select_course">Select Course<br></a>
-			<a href="deregister_course">Deregister Course<br></a>
-			<a href="drop_course">Drop Course<br></a>
-			<a href="login" id="logout">Log Out</a>
 	</div>
 	<!-- /.container -->
 
