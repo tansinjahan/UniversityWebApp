@@ -33,19 +33,28 @@
 	</nav>
 
 	<div class="container">
-		<h1><span id="deregisterHeader">DeRegister Course Page</span></h1>
-		<form:form method="POST" action="/deregister_course" modelAttribute="deregisterForm">
-             <table id="deregisterTable">
-                <tr>
-                    <td><form:label path="code">Input Course Code for Deregistration</form:label></td>
-                    <td><form:input path="code"/></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" id ="deregisterCodeSubmit" value="Submit"/></td>
-                </tr>
-            </table>
-            <button><a href="login" id="logout">Log Out</a></button>
-        </form:form>
+		<h1>
+			<span id="deregisterHeader">DeRegister Course Page</span>
+		</h1>
+		<c:if test="${!empty message}">
+			<div id="message" class="alert alert-danger">${message}.</div>
+		</c:if>
+		<form:form method="POST" action="/deregister_course"
+			modelAttribute="deregisterForm">
+			<table id="deregisterTable">
+				<tr>
+					<td><form:label path="code">Input Course Code for Deregistration</form:label></td>
+					<td><form:input path="code" /></td>
+				</tr>
+				<tr>
+					<td><input type="submit" id="deregisterCodeSubmit"
+						value="Submit" /></td>
+				</tr>
+			</table>
+			<button>
+				<a href="login" id="logout">Log Out</a>
+			</button>
+		</form:form>
 
 	</div>
 	<!-- /.container -->

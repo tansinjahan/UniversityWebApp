@@ -34,21 +34,26 @@
 
 	<div class="container">
 
-	<h1>
-		Delete Course
-	</h1>
-		<form:form method="POST" action="/delete_course" modelAttribute="deleteCourseForm">
-             <table id="deleteCourseTable">
-                <tr>
-                    <td><form:label path="code">Course Code</form:label></td>
-                    <td><form:input path="code"/></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" id = "deleteCourseSubmit" value="Submit"/></td>
-                </tr>
-            </table>
-            <button><a href="login" id="logout">Log Out</a></button>
-        </form:form>
+		<h1>Delete Course</h1>
+		<c:if test="${!empty message}">
+			<div id="message" class="alert alert-danger">${message}.</div>
+		</c:if>
+		<form:form method="POST" action="/delete_course"
+			modelAttribute="deleteCourseForm">
+			<table id="deleteCourseTable">
+				<tr>
+					<td><form:label path="code">Course Code</form:label></td>
+					<td><form:input path="code" /></td>
+				</tr>
+				<tr>
+					<td><input type="submit" id="deleteCourseSubmit"
+						value="Submit" /></td>
+				</tr>
+			</table>
+			<button>
+				<a href="login" id="logout">Log Out</a>
+			</button>
+		</form:form>
 	</div>
 	<!-- /.container -->
 

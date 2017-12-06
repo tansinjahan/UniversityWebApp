@@ -34,14 +34,15 @@
 
 	<div class="container">
 
-	<h1>
-		Welcome to Student Home Page
-	</h1>
-			<a href="register_course">Register Course<br></a>
-			<a href="select_course">Select Course<br></a>
-			<a href="deregister_course">Deregister Course<br></a>
-			<a href="drop_course">Drop Course<br></a>
-			<a href="login" id="logout">Log Out</a>
+		<h1>Welcome to Student Home Page</h1>
+		<c:if test="${!empty message}">
+			<div id="message" class="alert alert-danger">${message}.</div>
+		</c:if>
+		<a href="register_course">Register Course<br></a> <a
+			href="select_course">Select Course<br></a> <a
+			href="deregister_course">Deregister Course<br></a> <a
+			href="drop_course">Drop Course<br></a> <a href="login"
+			id="logout">Log Out</a>
 	</div>
 	<!-- /.container -->
 

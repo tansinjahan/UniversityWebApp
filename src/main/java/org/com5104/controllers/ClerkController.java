@@ -76,7 +76,7 @@ public class ClerkController {
 						student.getStudentNumber(), student.getEmail(), student.getPassword(), student.getstudentStatus());
 				System.out.printf("Student is created with %s and %s", newStudent.getStudentName(),
 						newStudent.getStudentNumber());
-				request.setAttribute("message", "Student successfully created!!");
+				request.setAttribute("message", "Student successfully created!!!");
 				return new ModelAndView("clerk/clerk_home");
 			}
 
@@ -91,8 +91,13 @@ public class ClerkController {
 			return new ModelAndView("clerk/delete_student");
 		} else {
 			if (result.hasErrors()) {
+				String message = "";
 				System.out.println("*************form error*****************");
 				System.out.println("Student can not be deleted");
+  				for (ObjectError error : result.getAllErrors()) {
+  					message = message + error.getDefaultMessage() + System.lineSeparator();
+ 				}
+ 				request.setAttribute("message", message);
 				return new ModelAndView("clerk/clerk_home");
 			} else {
 				TestTermSimulator test = new TestTermSimulator(University.getInstance());
@@ -100,6 +105,7 @@ public class ClerkController {
 				Student dStudent = StudentTable.getInstance().findByStudentNumber(student.getStudentNumber()); 
 				University.getInstance().deleteStudent(dStudent);
 				System.out.printf("Student is deleted successfully");
+				request.setAttribute("message", "Student is deleted successfully!!!");
 				return new ModelAndView("clerk/clerk_home", "deleteStudentForm", null);
 			}
 
@@ -114,8 +120,13 @@ public class ClerkController {
 			return new ModelAndView("clerk/delete_course");
 		} else {
 			if (result.hasErrors()) {
+				String message = "";
 				System.out.println("*************form error*****************");
 				System.out.println("Course can not be deleted");
+  				for (ObjectError error : result.getAllErrors()) {
+  					message = message + error.getDefaultMessage() + System.lineSeparator();
+ 				}
+ 				request.setAttribute("message", message);
 				return new ModelAndView("clerk/clerk_home");
 			} else {
 				TestTermSimulator test = new TestTermSimulator(University.getInstance());
@@ -124,6 +135,7 @@ public class ClerkController {
 				System.out.printf("course code", dCourse.getCode());
 				University.getInstance().cancelCourse(dCourse);
 				System.out.printf("Course is deleted successfully");
+				request.setAttribute("message", "Course is deleted successfully");
 				return new ModelAndView("clerk/clerk_home");
 			}
 

@@ -11,6 +11,7 @@ import org.com5104.tables.CourseTable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,6 +41,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 				if(result.hasErrors()) {
 					System.out.println("*************form error*****************");
 					System.out.println("Course registration has not been successful");
+					String message = "";
+	  				for (ObjectError error : result.getAllErrors()) {
+	  					message = message + error.getDefaultMessage() + System.lineSeparator();
+	 				}
+	 				request.setAttribute("message", message);
 					return new ModelAndView("student/student_home");
 				}
 				else {
@@ -51,6 +57,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 					System.out.println("======================================" + currentStudent);
 					University.getInstance().registerStudentForCourse(currentStudent, acourse);
 					System.out.println("Course registration has been successful");
+					request.setAttribute("message", "Course registration has been successful");
 					return new ModelAndView("student/register_course");
 				}
 				
@@ -70,6 +77,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 				if(result.hasErrors()) {
 					System.out.println("*************form error*****************");
 					System.out.println("Course selection has not been successful");
+					String message = "";
+	  				for (ObjectError error : result.getAllErrors()) {
+	  					message = message + error.getDefaultMessage() + System.lineSeparator();
+	 				}
+	 				request.setAttribute("message", message);
 					return new ModelAndView("student/student_home");
 				}
 				else {
@@ -81,6 +93,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 					System.out.println("======================================" + currentStudent);
 					University.getInstance().selectCourseForStudent(currentStudent, acourse);
 					System.out.println("Course selection has been successful");
+					request.setAttribute("message", "Course selection has been successful");
 					return new ModelAndView("student/select_course");
 				}
 				
@@ -100,6 +113,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 				if(result.hasErrors()) {
 					System.out.println("*************form error*****************");
 					System.out.println("Course can not be deregister");
+					String message = "";
+	  				for (ObjectError error : result.getAllErrors()) {
+	  					message = message + error.getDefaultMessage() + System.lineSeparator();
+	 				}
+	 				request.setAttribute("message", message);
 					return new ModelAndView("student/student_home");
 				}
 				else {
@@ -112,10 +130,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 					Boolean success = University.getInstance().deregisterCourse(acourse, currentStudent);
 					if(success) {
 						System.out.println("Course deregistration has been successful");
+						request.setAttribute("message", "Course deregistration has been successful");
 						return new ModelAndView("student/deregister_course");
 					}
 					else {
 						System.out.println("Course can not be deregister");
+						request.setAttribute("message", "Course can not be deregister");
 						return new ModelAndView("student/student_home");
 					}
 					
@@ -137,6 +157,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 				if(result.hasErrors()) {
 					System.out.println("*************form error*****************");
 					System.out.println("Course can not be dropped");
+					String message = "";
+	  				for (ObjectError error : result.getAllErrors()) {
+	  					message = message + error.getDefaultMessage() + System.lineSeparator();
+	 				}
+	 				request.setAttribute("message", message);
 					return new ModelAndView("student/student_home");
 				}
 				else {
@@ -149,11 +174,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 					if(success)
 					{
 						System.out.println("Course drop has been successful");
+						request.setAttribute("message", "Course drop has been successful");
 						return new ModelAndView("student/drop_course");
 					}
 					else
 					{
 						System.out.println("Course can not be dropped");
+						request.setAttribute("message", "Course can not be dropped");
 						return new ModelAndView("student/student_home");	
 					}
 					

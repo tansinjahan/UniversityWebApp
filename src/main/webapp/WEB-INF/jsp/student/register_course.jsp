@@ -34,6 +34,9 @@
 
 	<div class="container">
 		<h1><span id="registerHeader">Register Course Page</span></h1>
+			<c:if test="${!empty message}">
+			<div id="message" class="alert alert-danger">${message}.</div>
+		</c:if>
 		<form:form method="POST" action="/register_course" modelAttribute="registerForm">
              <table id="registerTable">
                 <tr>
