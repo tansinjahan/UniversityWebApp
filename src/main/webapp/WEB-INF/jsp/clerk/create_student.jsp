@@ -34,37 +34,40 @@
 
 	<div class="container">
 
-	<h1>
-		Create Student
-	</h1>
-		<form:form method="POST" action="/create_student" modelAttribute="createStudentForm">
-             <table id="createStudentTable">
-                <tr>
-                    <td><form:label path="studentName">Student Name</form:label></td>
-                    <td><form:input path="studentName" id="studentName"/></td>
-                </tr>
-                <tr>
-                    <td><form:label path="studentNumber">Student Number</form:label></td>
-                    <td><form:input path="studentNumber" id="studentNumber"/></td>
-                </tr>
-                <tr>
-                    <td><form:label path="email">Student email</form:label></td>
-                    <td><form:input path="email" id="email"/></td>
-                    <td><form:errors path="email" cssClass="error"/></td>
-                </tr>
-                <tr>
-                    <td><form:label path="password">Student password</form:label></td>
-                    <td><form:input path="password" id="password"/></td>
-                </tr>
-                <tr>
-                    <td><form:label path="studentStatus">Student status</form:label></td>
-                    <td><form:input path="studentStatus" id="studentStatus"/></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" id = "studentSubmit" value="Submit"/></td>
-                </tr>
-            </table>
-        </form:form>
+		<h1>Create Student</h1>
+		<c:if test="${!empty message}">
+			<div class="alert alert-danger">
+				${message}.
+			</div>
+		</c:if>
+		<form:form method="POST" action="/create_student"
+			modelAttribute="createStudentForm">
+			<table id="createStudentTable">
+				<tr>
+					<td><form:label path="studentName">Student Name</form:label></td>
+					<td><form:input path="studentName" id="studentName" /></td>
+				</tr>
+				<tr>
+					<td><form:label path="studentNumber">Student Number</form:label></td>
+					<td><form:input path="studentNumber" id="studentNumber" /></td>
+				</tr>
+				<tr>
+					<td><form:label path="email">Student email</form:label></td>
+					<td><form:input path="email" id="email" /></td>
+				</tr>
+				<tr>
+					<td><form:label path="password">Student password</form:label></td>
+					<td><form:input path="password" id="password" /></td>
+				</tr>
+				<tr>
+					<td><form:label path="studentStatus">Student status</form:label></td>
+					<td><form:input path="studentStatus" id="studentStatus" /></td>
+				</tr>
+				<tr>
+					<td><input type="submit" id="studentSubmit" value="Submit" /></td>
+				</tr>
+			</table>
+		</form:form>
 	</div>
 	<!-- /.container -->
 

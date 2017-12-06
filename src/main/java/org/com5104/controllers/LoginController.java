@@ -24,7 +24,7 @@ public class LoginController {
 			BindingResult result, Model model,
 			final RedirectAttributes redirectAttributes, HttpServletRequest request) {
 		if(request.getMethod().contains("GET")) {
-			return new ModelAndView("login", "loginForm", new Login());
+			return new ModelAndView("login", "loginForm", login);
 		}else {
 			if(login.getUserName().equalsIgnoreCase("clerk")) {
 				System.out.println("***************Tansin*******************");
@@ -35,7 +35,9 @@ public class LoginController {
 			}else {
 				System.out.println("************Tithy**********************" + login.getUserName());
 				model.addAttribute("loginForm", login);
-				return new ModelAndView("login", "", null);
+				//return new ModelAndView("login", "", null);
+				redirectAttributes.addFlashAttribute("message", "Invalid username and password");
+				return new ModelAndView( "redirect:/login");
 			}
 		}
 	}

@@ -14,6 +14,7 @@ import org.com5104.tables.StudentTable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -60,7 +61,7 @@ public class ClerkController {
 			}
 		}
 	}
-
+	
 	@RequestMapping(value = "/create_student", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView createStudent(@ModelAttribute("createStudentForm") @Validated StudentWebModel student,
 			BindingResult result, Model model, final RedirectAttributes redirectAttributes,
@@ -75,9 +76,14 @@ public class ClerkController {
 			return new ModelAndView("clerk/create_student", "createStudentForm", student);
 		} else {
 			if (result.hasErrors()) {
+				String message = "";
 				System.out.println("*************form error*****************");
 				System.out.println("Student can not be created");
-				return new ModelAndView("clerk/clerk_home");
+				for (ObjectError error : result.getAllErrors()) {
+					message = message + error.getDefaultMessage() + System.lineSeparator();
+				}
+				request.setAttribute("message", message);
+				return new ModelAndView("clerk/create_student");
 			} else {
 				TestTermSimulator test = new TestTermSimulator(University.getInstance());
 				test.termCreated();
@@ -85,7 +91,7 @@ public class ClerkController {
 						student.getStudentNumber(), student.getEmail(), student.getPassword(), student.getstudentStatus());
 				System.out.printf("Student is created with %s and %s", newStudent.getStudentName(),
 						newStudent.getStudentNumber());
-				return new ModelAndView("clerk/clerk_home", "createStudentForm", newStudent);
+				return new ModelAndView("clerk/clerk_home");
 			}
 
 		}
