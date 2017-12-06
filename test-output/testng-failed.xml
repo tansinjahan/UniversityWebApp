@@ -7,6 +7,9 @@
         <methods>
           <include name="ClerkLogin"/>
           <include name="CreateStudent"/>
+          <include name="DeleteStudent"/>
+          <include name="ShutDriver"/>
+          <include name="StudentLogin"/>
           <include name="Before"/>
         </methods>
       </class> <!-- org.com5104.testngselenium.NewTest1 -->

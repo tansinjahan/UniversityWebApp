@@ -37,20 +37,24 @@ public class ClerkController {
 		if (request.getMethod().contains("GET")) {
 			return new ModelAndView("clerk/create_course", "createCourseForm", course);
 		} else {
-			try {
-				TestTermSimulator test = new TestTermSimulator(University.getInstance());
-				test.termCreated();
-				Course acourse = University.getInstance().createCourse("clerk", course.getTitle(), course.getCode(),
-						course.getCapacity(), course.getFinalExam(), course.getAssignment(), course.getMidterm(),
-						course.getPrerequisite(), course.getProject());
-				System.out.printf("Course is created with %s and %d", acourse.getTitle(), acourse.getCode());
-				request.setAttribute("message", "Course was successfully created!!!");
-				return new ModelAndView("clerk/clerk_home", "", acourse);
-
-			} catch (Exception e) {
-				System.out.println("Course can not be created" + e.getMessage());
-				request.setAttribute("message", "Course was not created!!!");
+			if(result.hasErrors()) {
+				System.out.println("Course can not be created");
 				return new ModelAndView("clerk/clerk_home", "", null);
+			} else {
+				try {
+					TestTermSimulator test = new TestTermSimulator(University.getInstance());
+					test.termCreated();
+					Course acourse = University.getInstance().createCourse("clerk", course.getTitle(), course.getCode(),
+							course.getCapacity(), course.getFinalExam(), course.getAssignment(), course.getMidterm(),
+							course.getPrerequisite(), course.getProject());
+					System.out.printf("Course is created with %s and %d", acourse.getTitle(), acourse.getCode());
+					request.setAttribute("message", "Course was successfully created!!!");
+					return new ModelAndView("clerk/clerk_home", "", acourse);
+				} catch (Exception e) {
+					System.out.println("Course can not be created" + e.getMessage());
+					request.setAttribute("message", "Course was not created!!!");
+					return new ModelAndView("clerk/clerk_home", "", null);
+				}
 			}
 		}
 	}
@@ -64,13 +68,13 @@ public class ClerkController {
 		} else {
 			if (result.hasErrors()) {
 				String message = "";
-  				System.out.println("*************form error*****************");
-  				System.out.println("Student can not be created");
-  				for (ObjectError error : result.getAllErrors()) {
-  					message = message + error.getDefaultMessage() + System.lineSeparator();
- 				}
- 				request.setAttribute("message", message);
- 				return new ModelAndView("clerk/create_student");
+				System.out.println("*************form error*****************");
+				System.out.println("Student can not be created");
+				for (ObjectError error : result.getAllErrors()) {
+					message = message + error.getDefaultMessage() + System.lineSeparator();
+				}
+				request.setAttribute("message", message);
+				return new ModelAndView("clerk/create_student");
 			} else {
 				TestTermSimulator test = new TestTermSimulator(University.getInstance());
 				test.termCreated();
@@ -84,7 +88,7 @@ public class ClerkController {
 
 		}
 	}
-	
+
 	@RequestMapping(value = "/delete_student", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView deleteStudent(final RedirectAttributes redirectAttributes,
 			HttpServletRequest request) {
@@ -108,7 +112,7 @@ public class ClerkController {
 
 		}
 	}
-	
+
 	@RequestMapping(value = "/delete_course", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView deleteCourse(final RedirectAttributes redirectAttributes,
 			HttpServletRequest request) {

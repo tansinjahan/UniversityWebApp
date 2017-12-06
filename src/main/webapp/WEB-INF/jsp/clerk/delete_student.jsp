@@ -33,7 +33,6 @@
 	</nav>
 
 	<div class="container">
-
 		<h1>Delete Student</h1>
 		<c:if test="${!empty message}">
 			<div id="message" class="alert alert-danger">${message}.</div>
@@ -53,6 +52,7 @@
 				<a href="login" id="logout">Log Out</a>
 			</button>
 		</form:form>
+
 	</div>
 	<!-- /.container -->
 
