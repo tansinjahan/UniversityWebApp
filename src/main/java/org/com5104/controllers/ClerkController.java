@@ -76,6 +76,7 @@ public class ClerkController {
 				request.setAttribute("message", message);
 				return new ModelAndView("clerk/create_student");
 			} else {
+				try {
 				TestTermSimulator test = new TestTermSimulator(University.getInstance());
 				test.termCreated();
 				Student newStudent = University.getInstance().createStudent(student.getStudentName(),
@@ -84,6 +85,10 @@ public class ClerkController {
 						newStudent.getStudentNumber());
 				request.setAttribute("message", "Student successfully created!!!");
 				return new ModelAndView("clerk/clerk_home");
+				}catch(Exception e) {
+					request.setAttribute("message", "Student was not created: " + e.getMessage());
+					return new ModelAndView("clerk/create_student");
+				}
 			}
 
 		}
