@@ -87,7 +87,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 	  					message = message + error.getDefaultMessage() + System.lineSeparator();
 	 				}
 	 				request.setAttribute("message", message);
-					return new ModelAndView("student/student_home");
+					return new ModelAndView("student/select_course");
 				}
 				else {
 					try {
@@ -103,7 +103,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 					return new ModelAndView("student/student_home");
 					}catch(Exception e) {
 						request.setAttribute("message", "Course selection has not been successful : " + e.getMessage());
-						return new ModelAndView("student/student_home");
+						return new ModelAndView("student/select_course");
 					}
 				}
 				
@@ -128,7 +128,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 	  					message = message + error.getDefaultMessage() + System.lineSeparator();
 	 				}
 	 				request.setAttribute("message", message);
-					return new ModelAndView("student/student_home");
+					return new ModelAndView("student/deregister_course");
 				}
 				else {
 				System.out.println("I am inside deregistered course");
@@ -141,12 +141,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 					if(success) {
 						System.out.println("Course deregistration has been successful");
 						request.setAttribute("message", "Course deregistration has been successful");
-						return new ModelAndView("student/deregister_course");
+						return new ModelAndView("student/student_home");
 					}
 					else {
 						System.out.println("Course can not be deregister");
 						request.setAttribute("message", "Course can not be deregister");
-						return new ModelAndView("student/student_home");
+						return new ModelAndView("student/deregister_course");
 					}
 					
 				}
@@ -172,7 +172,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 	  					message = message + error.getDefaultMessage() + System.lineSeparator();
 	 				}
 	 				request.setAttribute("message", message);
-					return new ModelAndView("student/student_home");
+					return new ModelAndView("student/drop_course");
 				}
 				else {
 					TestTermSimulator test = new TestTermSimulator(University.getInstance());
@@ -185,13 +185,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 					{
 						System.out.println("Course drop has been successful");
 						request.setAttribute("message", "Course drop has been successful");
-						return new ModelAndView("student/drop_course");
+						return new ModelAndView("student/student_home");
 					}
 					else
 					{
 						System.out.println("Course can not be dropped");
 						request.setAttribute("message", "Course can not be dropped");
-						return new ModelAndView("student/student_home");	
+						return new ModelAndView("student/drop_course");	
 					}
 					
 				}
