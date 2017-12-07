@@ -44,7 +44,7 @@
 			<table id="selectTable">
 				<tr>
 					<td><form:label path="code">Input Selected Course Code</form:label></td>
-					<td><form:input path="code" /></td>
+					<td><form:input path="code" id="code"/></td>
 				</tr>
 				<tr>
 					<td><input type="submit" id="selectCodeSubmit" value="Submit" /></td>

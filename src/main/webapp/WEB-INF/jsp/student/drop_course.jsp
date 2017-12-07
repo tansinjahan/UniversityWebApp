@@ -44,7 +44,7 @@
 			<table id="dropTable">
 				<tr>
 					<td><form:label path="code">Input Course Code for Drop</form:label></td>
-					<td><form:input path="code" /></td>
+					<td><form:input path="code" id="code"/></td>
 				</tr>
 				<tr>
 					<td><input type="submit" id="dropCodeSubmit" value="Submit" /></td>

@@ -38,11 +38,11 @@
 		<c:if test="${!empty message}">
 			<div id="message" class="alert alert-danger">${message}.</div>
 		</c:if>
-		<a href="register_course">Register Course<br></a> <a
-			href="select_course">Select Course<br></a> <a
-			href="deregister_course">Deregister Course<br></a> <a
-			href="drop_course">Drop Course<br></a> <a href="login"
-			id="logout">Log Out</a>
+		<a href="register_course" id="registercourse">Register Course<br></a> 
+		<a href="select_course" id="takecourse">Select Course<br></a> 
+		<a href="deregister_course" id="deregistercourse">Deregister Course<br></a> 
+		<a href="drop_course" id="dropcourse">Drop Course<br></a> 
+		<a href="login" id="logout">Log Out</a>
 	</div>
 	<!-- /.container -->
 

@@ -49,6 +49,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 					return new ModelAndView("student/student_home");
 				}
 				else {
+					try {
 				System.out.println("I am inside register course");
 					TestTermSimulator test = new TestTermSimulator(University.getInstance());
 					test.termAllowCourseRegistration();
@@ -58,7 +59,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 					University.getInstance().registerStudentForCourse(currentStudent, acourse);
 					System.out.println("Course registration has been successful");
 					request.setAttribute("message", "Course registration has been successful");
-					return new ModelAndView("student/register_course");
+					return new ModelAndView("student/student_home");
+					}catch(Exception e) {
+						request.setAttribute("message", "Course registration has not been successful:" + e.getMessage());
+						return new ModelAndView("student/register_course");
+					}
 				}
 				
 			}
@@ -85,6 +90,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 					return new ModelAndView("student/student_home");
 				}
 				else {
+					try {
 				System.out.println("I am inside selected course");
 					TestTermSimulator test = new TestTermSimulator(University.getInstance());
 					test.termAllowCourseRegistration();
@@ -94,7 +100,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 					University.getInstance().selectCourseForStudent(currentStudent, acourse);
 					System.out.println("Course selection has been successful");
 					request.setAttribute("message", "Course selection has been successful");
-					return new ModelAndView("student/select_course");
+					return new ModelAndView("student/student_home");
+					}catch(Exception e) {
+						request.setAttribute("message", "Course selection has not been successful : " + e.getMessage());
+						return new ModelAndView("student/student_home");
+					}
 				}
 				
 			}

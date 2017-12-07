@@ -41,7 +41,7 @@
              <table id="registerTable">
                 <tr>
                     <td><form:label path="code">Input Course Code</form:label></td>
-                    <td><form:input path="code"/></td>
+                    <td><form:input path="code" id="code"/></td>
                 </tr>
                 <tr>
                     <td><input type="submit" id ="registerCodeSubmit" value="Submit"/></td>

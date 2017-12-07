@@ -29,56 +29,163 @@ public class NewTest1 {
 		driver.findElement(By.id("loginSubmit")).click();
 	}
 	
-	@Test (dependsOnMethods= "CreateStudent")
-	public void StudentLogin() {
-		driver.findElement(By.id("user")).sendKeys("tithy@gmail");
-		driver.findElement(By.id("password")).sendKeys("12345");
-		driver.findElement(By.id("loginSubmit")).click();
-	}
-	
 	@Test (dependsOnMethods=("ClerkLogin"))
-	public void CreateStudent() {
+	public void CreateStudentS1() {
 		driver.findElement(By.id("createstudent")).click();
 		driver.findElement(By.id("studentName")).sendKeys("tithy");
-		driver.findElement(By.id("studentNumber")).sendKeys("56789");
+		driver.findElement(By.id("studentNumber")).sendKeys("67890");
 		driver.findElement(By.id("email")).sendKeys("tithy@gmail");
 		driver.findElement(By.id("password")).sendKeys("12345");
 		driver.findElement(By.id("studentStatus")).sendKeys("full time");
 		driver.findElement(By.id("studentSubmit")).click();
 	}
 	
-	@Test (dependsOnMethods=("ClerkLogin"))
-	public void CreateCourse() {
+	@Test (dependsOnMethods=("CreateStudentS1"))
+	public void CreateCourseC1() {
 		driver.findElement(By.id("createcourse")).click();
 		driver.findElement(By.id("title")).sendKeys("Object Oriented");
-		driver.findElement(By.id("code")).sendKeys("112299");
+		driver.findElement(By.id("code")).sendKeys("114466");
 		driver.findElement(By.id("capacity")).sendKeys("27");
 		driver.findElement(By.id("finalExam")).sendKeys("true");
 		driver.findElement(By.id("assignment")).sendKeys("2");
-		driver.findElement(By.id("midterm")).sendKeys("true");
+		driver.findElement(By.id("midterm")).sendKeys("1");
+		driver.findElement(By.id("prerequisite")).sendKeys("false");
+		driver.findElement(By.id("project")).sendKeys("true");
+		driver.findElement(By.id("courseSubmit")).click();
+		//assert(driver.findElement(By.id("message")).getText().contains("successfully"));
+	}
+	
+	
+	@Test (dependsOnMethods={"CreateCourseC1"})
+	public void DeleteStudentS1() {
+		driver.findElement(By.id("deletestudent")).click();
+		driver.findElement(By.id("studentNumber")).sendKeys("67890");
+		driver.findElement(By.id("deleteStudentSubmit")).click();
+	}
+	
+	@Test (dependsOnMethods="DeleteStudentS1")
+	public void DeleteCourseC1() {
+		driver.findElement(By.id("deletecourse")).click();
+		driver.findElement(By.id("code")).sendKeys("114466");
+		driver.findElement(By.id("deleteCourseSubmit")).click();
+		
+	}
+	
+	@Test (dependsOnMethods=("DeleteCourseC1"))
+	public void CreateCourseC2() {
+		driver.findElement(By.id("createcourse")).click();
+		driver.findElement(By.id("title")).sendKeys("Object Oriented");
+		driver.findElement(By.id("code")).sendKeys("112233");
+		driver.findElement(By.id("capacity")).sendKeys("27");
+		driver.findElement(By.id("finalExam")).sendKeys("true");
+		driver.findElement(By.id("assignment")).sendKeys("2");
+		driver.findElement(By.id("midterm")).sendKeys("1");
 		driver.findElement(By.id("prerequisite")).sendKeys("false");
 		driver.findElement(By.id("project")).sendKeys("true");
 		driver.findElement(By.id("courseSubmit")).click();
 	}
 	
-	@Test (dependsOnMethods={"ClerkLogin","CreateCourse"})
-	public void DeleteCourse() {
-		driver.findElement(By.id("deletecourse")).click();
-		driver.findElement(By.id("deleteCourseCode")).sendKeys("112299");
-		driver.findElement(By.id("deleteCourseSubmit")).click();
-		
+	@Test (dependsOnMethods=("CreateCourseC2"))
+	public void CreateStudentS2() {
+		driver.findElement(By.id("createstudent")).click();
+		driver.findElement(By.id("studentName")).sendKeys("tithy");
+		driver.findElement(By.id("studentNumber")).sendKeys("123456");
+		driver.findElement(By.id("email")).sendKeys("ta@gmail");
+		driver.findElement(By.id("password")).sendKeys("12345");
+		driver.findElement(By.id("studentStatus")).sendKeys("full time");
+		driver.findElement(By.id("studentSubmit")).click();
 	}
 	
-	@Test (dependsOnMethods={"ClerkLogin","CreateStudent"})
-	public void DeleteStudent() {
-		driver.findElement(By.id("deletestudent")).click();
-		driver.findElement(By.id("deleteStudentNumber")).sendKeys("56789");
-		driver.findElement(By.id("deleteStudentSubmit")).click();
+	@Test (dependsOnMethods=("CreateStudentS2"))
+	public void CreateCourseC3() {
+		driver.findElement(By.id("createcourse")).click();
+		driver.findElement(By.id("title")).sendKeys("Data Science");
+		driver.findElement(By.id("code")).sendKeys("112244");
+		driver.findElement(By.id("capacity")).sendKeys("27");
+		driver.findElement(By.id("finalExam")).sendKeys("true");
+		driver.findElement(By.id("assignment")).sendKeys("2");
+		driver.findElement(By.id("midterm")).sendKeys("1");
+		driver.findElement(By.id("prerequisite")).sendKeys("false");
+		driver.findElement(By.id("project")).sendKeys("true");
+		driver.findElement(By.id("courseSubmit")).click();
 	}
 	
+	@Test (dependsOnMethods=("CreateCourseC3"))
+	public void CreateStudentS3() {
+		driver.findElement(By.id("createstudent")).click();
+		driver.findElement(By.id("studentName")).sendKeys("Ahmad");
+		driver.findElement(By.id("studentNumber")).sendKeys("567890");
+		driver.findElement(By.id("email")).sendKeys("ah@gmail");
+		driver.findElement(By.id("password")).sendKeys("12345");
+		driver.findElement(By.id("studentStatus")).sendKeys("full time");
+		driver.findElement(By.id("studentSubmit")).click();
+	}
 	
 	@AfterTest
 	public void ShutDriver() {
 		driver.quit();
 	}
+	
+	@Test (dependsOnMethods=("CreateStudentS3"))
+	public void ClerkLogOut() {
+		driver.findElement(By.id("logout")).click();
+	}
+	
+
+	@Test (dependsOnMethods=("ClerkLogOut"))
+	public void StudentLoginS2() {
+		driver.findElement(By.id("user")).sendKeys("ta@gmail");
+		driver.findElement(By.id("password")).sendKeys("12345");
+		driver.findElement(By.id("loginSubmit")).click();
+	}
+	
+	@Test (dependsOnMethods=("StudentLoginS2"))
+	public void StudentS2TakeCourseC2() {
+		driver.findElement(By.id("takecourse")).click();
+		driver.findElement(By.id("code")).sendKeys("112233");
+		driver.findElement(By.id("selectCodeSubmit")).click();
+	}
+
+	@Test (dependsOnMethods=("StudentS2TakeCourseC2"))
+	public void StudentS2TakeCourseC3() {
+		driver.findElement(By.id("takecourse")).click();
+		driver.findElement(By.id("code")).sendKeys("112244");
+		driver.findElement(By.id("selectCodeSubmit")).click();
+	}
+	
+	@Test (dependsOnMethods=("StudentS2TakeCourseC3"))
+	public void StudentS2RegisterForCourseC2(){
+		driver.findElement(By.id("registercourse")).click();
+		driver.findElement(By.id("code")).sendKeys("112233");
+		driver.findElement(By.id("registerCodeSubmit")).click();
+	}
+	
+	@Test (dependsOnMethods=("StudentS2RegisterForCourseC2"))
+	public void StudentS2RegisterForCourseC3() {
+		driver.findElement(By.id("registercourse")).click();
+		driver.findElement(By.id("code")).sendKeys("112244");
+		driver.findElement(By.id("registerCodeSubmit")).click();
+	}
+	
+	@Test (dependsOnMethods=("StudentS2RegisterForCourseC3"))
+	public void StudentS2DeRegisterForCourseC2() {
+		driver.findElement(By.id("deregistercourse")).click();
+		driver.findElement(By.id("code")).sendKeys("112233");
+		driver.findElement(By.id("deregisterCodeSubmit")).click();
+	}
+	
+	@Test (dependsOnMethods=("StudentS2DeRegisterForCourseC2"))
+	public void StudentS2DropCourseC3() {
+		driver.findElement(By.id("dropcourse")).click();
+		driver.findElement(By.id("code")).sendKeys("112244");
+		driver.findElement(By.id("dropCodeSubmit")).click();
+	}
+	
+	@Test (dependsOnMethods=("StudentS2DropCourseC3"))
+	public void StudentLogOut() {
+		driver.findElement(By.id("logout")).click();
+	}
+	
+	
+	
 }

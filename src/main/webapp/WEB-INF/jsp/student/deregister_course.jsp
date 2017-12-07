@@ -44,11 +44,10 @@
 			<table id="deregisterTable">
 				<tr>
 					<td><form:label path="code">Input Course Code for Deregistration</form:label></td>
-					<td><form:input path="code" /></td>
+					<td><form:input path="code" id="code"/></td>
 				</tr>
 				<tr>
-					<td><input type="submit" id="deregisterCodeSubmit"
-						value="Submit" /></td>
+					<td><input type="submit" id="deregisterCodeSubmit" value="Submit" /></td>
 				</tr>
 			</table>
 			<button>

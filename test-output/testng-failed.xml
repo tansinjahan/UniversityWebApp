@@ -5,12 +5,26 @@
     <classes>
       <class name="org.com5104.testngselenium.NewTest1">
         <methods>
+          <include name="CreateStudentS2"/>
           <include name="ClerkLogin"/>
-          <include name="CreateStudent"/>
-          <include name="DeleteStudent"/>
+          <include name="CreateStudentS1"/>
+          <include name="CreateStudentS3"/>
+          <include name="StudentLoginS2"/>
+          <include name="StudentS2DeRegisterForCourseC2"/>
+          <include name="DeleteStudentS1"/>
+          <include name="ClerkLogOut"/>
+          <include name="StudentS2DropCourseC3"/>
+          <include name="CreateCourseC2"/>
+          <include name="CreateCourseC3"/>
+          <include name="CreateCourseC1"/>
+          <include name="StudentS2TakeCourseC2"/>
           <include name="ShutDriver"/>
-          <include name="StudentLogin"/>
+          <include name="StudentLogOut"/>
+          <include name="StudentS2RegisterForCourseC2"/>
           <include name="Before"/>
+          <include name="StudentS2TakeCourseC3"/>
+          <include name="StudentS2RegisterForCourseC3"/>
+          <include name="DeleteCourseC1"/>
         </methods>
       </class> <!-- org.com5104.testngselenium.NewTest1 -->
     </classes>

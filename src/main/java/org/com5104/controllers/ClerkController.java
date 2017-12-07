@@ -44,7 +44,7 @@ public class ClerkController {
 					message = message + error.getDefaultMessage() + System.lineSeparator();
 				}
 				request.setAttribute("message", message);
-				return new ModelAndView("clerk/create_course", "", null);
+				return new ModelAndView("clerk/clerk_home", "", null);
 			} else {
 				try {
 					TestTermSimulator test = new TestTermSimulator(University.getInstance());
@@ -58,7 +58,7 @@ public class ClerkController {
 				} catch (Exception e) {
 					System.out.println("Course can not be created" + e.getMessage());
 					request.setAttribute("message", "Course was not created: " + e.getMessage());
-					return new ModelAndView("clerk/create_course", "", null);
+					return new ModelAndView("clerk/clerk_home", "", null);
 				}
 			}
 		}
@@ -92,7 +92,7 @@ public class ClerkController {
 				return new ModelAndView("clerk/clerk_home");
 				}catch(Exception e) {
 					request.setAttribute("message", "Student was not created: " + e.getMessage());
-					return new ModelAndView("clerk/create_student");
+					return new ModelAndView("clerk/clerk_home");
 				}
 			}
 
@@ -109,7 +109,7 @@ public class ClerkController {
 				System.out.println("*************form error*****************");
 				System.out.println("Student can not be deleted");
 				request.setAttribute("message", "Please enter student number");
-				return new ModelAndView("clerk/delete_student");
+				return new ModelAndView("clerk/clerk_home");
 			} else {
 				TestTermSimulator test = new TestTermSimulator(University.getInstance());
 				test.termCreated();
@@ -133,7 +133,7 @@ public class ClerkController {
 				System.out.println("*************form error*****************");
 				System.out.println("Course can not be deleted");
 				request.setAttribute("message", "Please enter course code");
-				return new ModelAndView("clerk/delete_course");
+				return new ModelAndView("clerk/clerk_home");
 			} else {
 				TestTermSimulator test = new TestTermSimulator(University.getInstance());
 				test.termCreated();
