@@ -38,8 +38,13 @@ public class ClerkController {
 			return new ModelAndView("clerk/create_course", "createCourseForm", course);
 		} else {
 			if(result.hasErrors()) {
+				String message = "";
 				System.out.println("Course can not be created");
-				return new ModelAndView("clerk/clerk_home", "", null);
+				for (ObjectError error : result.getAllErrors()) {
+					message = message + error.getDefaultMessage() + System.lineSeparator();
+				}
+				request.setAttribute("message", message);
+				return new ModelAndView("clerk/create_course", "", null);
 			} else {
 				try {
 					TestTermSimulator test = new TestTermSimulator(University.getInstance());
@@ -52,8 +57,8 @@ public class ClerkController {
 					return new ModelAndView("clerk/clerk_home", "", acourse);
 				} catch (Exception e) {
 					System.out.println("Course can not be created" + e.getMessage());
-					request.setAttribute("message", "Course was not created!!!");
-					return new ModelAndView("clerk/clerk_home", "", null);
+					request.setAttribute("message", "Course was not created: " + e.getMessage());
+					return new ModelAndView("clerk/create_course", "", null);
 				}
 			}
 		}

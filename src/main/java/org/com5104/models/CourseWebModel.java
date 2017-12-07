@@ -1,7 +1,11 @@
 package org.com5104.models;
 
+import javax.validation.constraints.NotNull;
+
+
 public class CourseWebModel {
 	private String title;
+	@NotNull(message = "Please enter course code")
 	private Integer code;
 	private Integer capacity;
 	private Boolean finalExam;
