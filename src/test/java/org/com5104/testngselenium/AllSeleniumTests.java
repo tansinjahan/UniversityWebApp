@@ -1,32 +1,34 @@
 package org.com5104.testngselenium;
 
+import static org.testng.Assert.assertTrue;
+
 import org.com5104.utilities.Config;
+import org.com5104.utilities.testng.ScreenshotListener;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-public class NewTest1 {
+@Listeners({ScreenshotListener.class})
+public class AllSeleniumTests {
 
 	public static WebDriver driver;
 
 	@BeforeTest
 	public void Before() {
-		System.setProperty("webdriver.chrome.driver", "F:/chromedriver.exe");
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--start-maximized");
-		driver = new ChromeDriver(options);
-		driver.get("http://localhost:8080/login");
+		driver= ScreenshotListener.getDefaultWebDriver();
 	}
 
 	@Test
-	public void ClerkLogin() {
+	public void ClerkLogin(){
 		driver.findElement(By.id("user")).sendKeys("clerk");
 		driver.findElement(By.id("password")).sendKeys(Config.CLERK_PASSWORD);
 		driver.findElement(By.id("loginSubmit")).click();
+		assert(driver.findElement(By.id("message")).getText().contains("Successfully logged in!!"));
 	}
 	
 	@Test (dependsOnMethods=("ClerkLogin"))
@@ -38,6 +40,7 @@ public class NewTest1 {
 		driver.findElement(By.id("password")).sendKeys("12345");
 		driver.findElement(By.id("studentStatus")).sendKeys("full time");
 		driver.findElement(By.id("studentSubmit")).click();
+		assert(driver.findElement(By.id("message")).getText().contains("Student successfully created!!!"));
 	}
 	
 	@Test (dependsOnMethods=("CreateStudentS1"))
@@ -52,7 +55,7 @@ public class NewTest1 {
 		driver.findElement(By.id("prerequisite")).sendKeys("false");
 		driver.findElement(By.id("project")).sendKeys("true");
 		driver.findElement(By.id("courseSubmit")).click();
-		//assert(driver.findElement(By.id("message")).getText().contains("successfully"));
+		assert(driver.findElement(By.id("message")).getText().contains("Course was successfully created!!!"));
 	}
 	
 	
@@ -61,6 +64,7 @@ public class NewTest1 {
 		driver.findElement(By.id("deletestudent")).click();
 		driver.findElement(By.id("studentNumber")).sendKeys("67890");
 		driver.findElement(By.id("deleteStudentSubmit")).click();
+		assert(driver.findElement(By.id("message")).getText().contains("Student is deleted successfully"));
 	}
 	
 	@Test (dependsOnMethods="DeleteStudentS1")
@@ -68,6 +72,7 @@ public class NewTest1 {
 		driver.findElement(By.id("deletecourse")).click();
 		driver.findElement(By.id("code")).sendKeys("114466");
 		driver.findElement(By.id("deleteCourseSubmit")).click();
+		assert(driver.findElement(By.id("message")).getText().contains("Course is deleted successfully"));
 		
 	}
 	
@@ -83,6 +88,7 @@ public class NewTest1 {
 		driver.findElement(By.id("prerequisite")).sendKeys("false");
 		driver.findElement(By.id("project")).sendKeys("true");
 		driver.findElement(By.id("courseSubmit")).click();
+		assert(driver.findElement(By.id("message")).getText().contains("Course was successfully created!!!"));
 	}
 	
 	@Test (dependsOnMethods=("CreateCourseC2"))
@@ -94,6 +100,7 @@ public class NewTest1 {
 		driver.findElement(By.id("password")).sendKeys("12345");
 		driver.findElement(By.id("studentStatus")).sendKeys("full time");
 		driver.findElement(By.id("studentSubmit")).click();
+		assert(driver.findElement(By.id("message")).getText().contains("Student successfully created!!!"));
 	}
 	
 	@Test (dependsOnMethods=("CreateStudentS2"))
@@ -108,6 +115,7 @@ public class NewTest1 {
 		driver.findElement(By.id("prerequisite")).sendKeys("false");
 		driver.findElement(By.id("project")).sendKeys("true");
 		driver.findElement(By.id("courseSubmit")).click();
+		assert(driver.findElement(By.id("message")).getText().contains("Course was successfully created!!!"));
 	}
 	
 	@Test (dependsOnMethods=("CreateCourseC3"))
@@ -119,6 +127,7 @@ public class NewTest1 {
 		driver.findElement(By.id("password")).sendKeys("12345");
 		driver.findElement(By.id("studentStatus")).sendKeys("full time");
 		driver.findElement(By.id("studentSubmit")).click();
+		assert(driver.findElement(By.id("message")).getText().contains("Student successfully created!!!"));
 	}
 	
 	@AfterTest
@@ -144,6 +153,7 @@ public class NewTest1 {
 		driver.findElement(By.id("takecourse")).click();
 		driver.findElement(By.id("code")).sendKeys("112233");
 		driver.findElement(By.id("selectCodeSubmit")).click();
+		assert(driver.findElement(By.id("message")).getText().contains("Course selection has been successful"));
 	}
 
 	@Test (dependsOnMethods=("StudentS2TakeCourseC2"))
@@ -151,6 +161,7 @@ public class NewTest1 {
 		driver.findElement(By.id("takecourse")).click();
 		driver.findElement(By.id("code")).sendKeys("112244");
 		driver.findElement(By.id("selectCodeSubmit")).click();
+		assert(driver.findElement(By.id("message")).getText().contains("Course selection has been successful"));
 	}
 	
 	@Test (dependsOnMethods=("StudentS2TakeCourseC3"))
@@ -158,6 +169,7 @@ public class NewTest1 {
 		driver.findElement(By.id("registercourse")).click();
 		driver.findElement(By.id("code")).sendKeys("112233");
 		driver.findElement(By.id("registerCodeSubmit")).click();
+		assert(driver.findElement(By.id("message")).getText().contains("Course registration has been successful"));
 	}
 	
 	@Test (dependsOnMethods=("StudentS2RegisterForCourseC2"))
@@ -165,6 +177,7 @@ public class NewTest1 {
 		driver.findElement(By.id("registercourse")).click();
 		driver.findElement(By.id("code")).sendKeys("112244");
 		driver.findElement(By.id("registerCodeSubmit")).click();
+		assert(driver.findElement(By.id("message")).getText().contains("Course registration has been successful"));
 	}
 	
 	@Test (dependsOnMethods=("StudentS2RegisterForCourseC3"))
@@ -172,6 +185,7 @@ public class NewTest1 {
 		driver.findElement(By.id("deregistercourse")).click();
 		driver.findElement(By.id("code")).sendKeys("112233");
 		driver.findElement(By.id("deregisterCodeSubmit")).click();
+		assert(driver.findElement(By.id("message")).getText().contains("Course deregistration has been successful"));
 	}
 	
 	@Test (dependsOnMethods=("StudentS2DeRegisterForCourseC2"))
@@ -179,13 +193,12 @@ public class NewTest1 {
 		driver.findElement(By.id("dropcourse")).click();
 		driver.findElement(By.id("code")).sendKeys("112244");
 		driver.findElement(By.id("dropCodeSubmit")).click();
+		assert(driver.findElement(By.id("message")).getText().contains("Course drop has been successful"));
 	}
 	
 	@Test (dependsOnMethods=("StudentS2DropCourseC3"))
 	public void StudentLogOut() {
 		driver.findElement(By.id("logout")).click();
 	}
-	
-	
 	
 }

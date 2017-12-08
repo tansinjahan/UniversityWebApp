@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="NewTest1">
+
+<listeners>
+    <listener class-name="com.tests.DotTestListener" />
+</listeners>
+
+ <test verbose="2" name="NewTest1">
+    <classes>
+      <class name="org.com5104.testngselenium.NewTest1"/>
+    </classes>
+  </test> <!-- Default test -->
+
+</suite>

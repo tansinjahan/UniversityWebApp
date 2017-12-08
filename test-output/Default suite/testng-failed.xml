@@ -3,30 +3,30 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="org.com5104.testngselenium.NewTest1">
+      <class name="org.com5104.testngselenium.AllSeleniumTests">
         <methods>
-          <include name="CreateStudentS2"/>
+          <include name="ClerkLogOut"/>
+          <include name="DeleteStudentS1"/>
           <include name="ClerkLogin"/>
           <include name="CreateStudentS1"/>
-          <include name="CreateStudentS3"/>
+          <include name="CreateStudentS2"/>
           <include name="StudentLoginS2"/>
           <include name="StudentS2DeRegisterForCourseC2"/>
-          <include name="DeleteStudentS1"/>
-          <include name="ClerkLogOut"/>
-          <include name="StudentS2DropCourseC3"/>
-          <include name="CreateCourseC2"/>
-          <include name="CreateCourseC3"/>
-          <include name="CreateCourseC1"/>
+          <include name="Before"/>
           <include name="StudentS2TakeCourseC2"/>
+          <include name="StudentS2TakeCourseC3"/>
+          <include name="DeleteCourseC1"/>
+          <include name="StudentS2RegisterForCourseC2"/>
+          <include name="CreateCourseC3"/>
           <include name="ShutDriver"/>
           <include name="StudentLogOut"/>
-          <include name="StudentS2RegisterForCourseC2"/>
-          <include name="Before"/>
-          <include name="StudentS2TakeCourseC3"/>
+          <include name="CreateStudentS3"/>
+          <include name="CreateCourseC1"/>
+          <include name="CreateCourseC2"/>
           <include name="StudentS2RegisterForCourseC3"/>
-          <include name="DeleteCourseC1"/>
+          <include name="StudentS2DropCourseC3"/>
         </methods>
-      </class> <!-- org.com5104.testngselenium.NewTest1 -->
+      </class> <!-- org.com5104.testngselenium.AllSeleniumTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

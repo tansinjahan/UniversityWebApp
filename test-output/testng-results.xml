@@ -1,93 +1,557 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="18" passed="18">
+<testng-results skipped="16" failed="1" ignored="0" total="18" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="20032" started-at="2017-12-07T22:54:24Z" finished-at="2017-12-07T22:54:44Z">
+  <suite name="Default suite" duration-ms="11915" started-at="2017-12-08T00:12:28Z" finished-at="2017-12-08T00:12:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="20032" started-at="2017-12-07T22:54:24Z" finished-at="2017-12-07T22:54:44Z">
-      <class name="org.com5104.testngselenium.NewTest1">
-        <test-method status="PASS" signature="Before()[pri:0, instance:org.com5104.testngselenium.NewTest1@5649fd9b]" name="Before" is-config="true" duration-ms="5075" started-at="2017-12-07T17:54:24Z" finished-at="2017-12-07T17:54:29Z">
+    <test name="Default test" duration-ms="11915" started-at="2017-12-08T00:12:28Z" finished-at="2017-12-08T00:12:40Z">
+      <class name="org.com5104.testngselenium.AllSeleniumTests">
+        <test-method status="PASS" signature="Before()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="Before" is-config="true" duration-ms="3868" started-at="2017-12-07T19:12:28Z" finished-at="2017-12-07T19:12:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Before -->
-        <test-method status="PASS" signature="ClerkLogin()[pri:0, instance:org.com5104.testngselenium.NewTest1@5649fd9b]" name="ClerkLogin" duration-ms="831" started-at="2017-12-07T17:54:29Z" finished-at="2017-12-07T17:54:30Z">
+        <test-method status="PASS" signature="ClerkLogin()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="ClerkLogin" duration-ms="492" started-at="2017-12-07T19:12:32Z" finished-at="2017-12-07T19:12:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ClerkLogin -->
-        <test-method status="PASS" signature="CreateStudentS1()[pri:0, instance:org.com5104.testngselenium.NewTest1@5649fd9b]" name="CreateStudentS1" duration-ms="1594" started-at="2017-12-07T17:54:30Z" depends-on-methods="org.com5104.testngselenium.NewTest1.ClerkLogin" finished-at="2017-12-07T17:54:32Z">
+        <test-method status="FAIL" signature="CreateStudentS1()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="CreateStudentS1" duration-ms="896" started-at="2017-12-07T19:12:32Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.ClerkLogin" finished-at="2017-12-07T19:12:33Z">
+          <exception class="java.lang.AssertionError">
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError
+	at org.com5104.testngselenium.AllSeleniumTests.CreateStudentS1(AllSeleniumTests.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateStudentS1 -->
-        <test-method status="PASS" signature="CreateCourseC1()[pri:0, instance:org.com5104.testngselenium.NewTest1@5649fd9b]" name="CreateCourseC1" duration-ms="1762" started-at="2017-12-07T17:54:32Z" depends-on-methods="org.com5104.testngselenium.NewTest1.CreateStudentS1" finished-at="2017-12-07T17:54:33Z">
+        <test-method status="SKIP" signature="CreateCourseC1()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="CreateCourseC1" duration-ms="1" started-at="2017-12-07T19:12:39Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.CreateStudentS1" finished-at="2017-12-07T19:12:39Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method AllSeleniumTests.CreateCourseC1()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method AllSeleniumTests.CreateCourseC1()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateCourseC1 -->
-        <test-method status="PASS" signature="DeleteStudentS1()[pri:0, instance:org.com5104.testngselenium.NewTest1@5649fd9b]" name="DeleteStudentS1" duration-ms="750" started-at="2017-12-07T17:54:33Z" depends-on-methods="org.com5104.testngselenium.NewTest1.CreateCourseC1" finished-at="2017-12-07T17:54:34Z">
+        <test-method status="SKIP" signature="DeleteStudentS1()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="DeleteStudentS1" duration-ms="0" started-at="2017-12-07T19:12:39Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.CreateCourseC1" finished-at="2017-12-07T19:12:39Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method AllSeleniumTests.DeleteStudentS1()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method AllSeleniumTests.DeleteStudentS1()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DeleteStudentS1 -->
-        <test-method status="PASS" signature="DeleteCourseC1()[pri:0, instance:org.com5104.testngselenium.NewTest1@5649fd9b]" name="DeleteCourseC1" duration-ms="755" started-at="2017-12-07T17:54:34Z" depends-on-methods="org.com5104.testngselenium.NewTest1.DeleteStudentS1" finished-at="2017-12-07T17:54:35Z">
+        <test-method status="SKIP" signature="DeleteCourseC1()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="DeleteCourseC1" duration-ms="0" started-at="2017-12-07T19:12:39Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.DeleteStudentS1" finished-at="2017-12-07T19:12:39Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method AllSeleniumTests.DeleteCourseC1()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method AllSeleniumTests.DeleteCourseC1()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DeleteCourseC1 -->
-        <test-method status="PASS" signature="CreateCourseC2()[pri:0, instance:org.com5104.testngselenium.NewTest1@5649fd9b]" name="CreateCourseC2" duration-ms="1182" started-at="2017-12-07T17:54:35Z" depends-on-methods="org.com5104.testngselenium.NewTest1.DeleteCourseC1" finished-at="2017-12-07T17:54:36Z">
+        <test-method status="SKIP" signature="CreateCourseC2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="CreateCourseC2" duration-ms="0" started-at="2017-12-07T19:12:39Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.DeleteCourseC1" finished-at="2017-12-07T19:12:39Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method AllSeleniumTests.CreateCourseC2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method AllSeleniumTests.CreateCourseC2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateCourseC2 -->
-        <test-method status="PASS" signature="CreateStudentS2()[pri:0, instance:org.com5104.testngselenium.NewTest1@5649fd9b]" name="CreateStudentS2" duration-ms="732" started-at="2017-12-07T17:54:36Z" depends-on-methods="org.com5104.testngselenium.NewTest1.CreateCourseC2" finished-at="2017-12-07T17:54:37Z">
+        <test-method status="SKIP" signature="CreateStudentS2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="CreateStudentS2" duration-ms="0" started-at="2017-12-07T19:12:39Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.CreateCourseC2" finished-at="2017-12-07T19:12:39Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method AllSeleniumTests.CreateStudentS2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method AllSeleniumTests.CreateStudentS2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateStudentS2 -->
-        <test-method status="PASS" signature="CreateCourseC3()[pri:0, instance:org.com5104.testngselenium.NewTest1@5649fd9b]" name="CreateCourseC3" duration-ms="952" started-at="2017-12-07T17:54:37Z" depends-on-methods="org.com5104.testngselenium.NewTest1.CreateStudentS2" finished-at="2017-12-07T17:54:38Z">
+        <test-method status="SKIP" signature="CreateCourseC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="CreateCourseC3" duration-ms="0" started-at="2017-12-07T19:12:39Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.CreateStudentS2" finished-at="2017-12-07T19:12:39Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method AllSeleniumTests.CreateCourseC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method AllSeleniumTests.CreateCourseC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateCourseC3 -->
-        <test-method status="PASS" signature="CreateStudentS3()[pri:0, instance:org.com5104.testngselenium.NewTest1@5649fd9b]" name="CreateStudentS3" duration-ms="741" started-at="2017-12-07T17:54:38Z" depends-on-methods="org.com5104.testngselenium.NewTest1.CreateCourseC3" finished-at="2017-12-07T17:54:38Z">
+        <test-method status="SKIP" signature="CreateStudentS3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="CreateStudentS3" duration-ms="0" started-at="2017-12-07T19:12:39Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.CreateCourseC3" finished-at="2017-12-07T19:12:39Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method AllSeleniumTests.CreateStudentS3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method AllSeleniumTests.CreateStudentS3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateStudentS3 -->
-        <test-method status="PASS" signature="ClerkLogOut()[pri:0, instance:org.com5104.testngselenium.NewTest1@5649fd9b]" name="ClerkLogOut" duration-ms="174" started-at="2017-12-07T17:54:38Z" depends-on-methods="org.com5104.testngselenium.NewTest1.CreateStudentS3" finished-at="2017-12-07T17:54:39Z">
+        <test-method status="SKIP" signature="ClerkLogOut()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="ClerkLogOut" duration-ms="0" started-at="2017-12-07T19:12:39Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.CreateStudentS3" finished-at="2017-12-07T19:12:39Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method AllSeleniumTests.ClerkLogOut()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method AllSeleniumTests.ClerkLogOut()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ClerkLogOut -->
-        <test-method status="PASS" signature="StudentLoginS2()[pri:0, instance:org.com5104.testngselenium.NewTest1@5649fd9b]" name="StudentLoginS2" duration-ms="551" started-at="2017-12-07T17:54:39Z" depends-on-methods="org.com5104.testngselenium.NewTest1.ClerkLogOut" finished-at="2017-12-07T17:54:39Z">
+        <test-method status="SKIP" signature="StudentLoginS2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentLoginS2" duration-ms="0" started-at="2017-12-07T19:12:39Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.ClerkLogOut" finished-at="2017-12-07T19:12:39Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method AllSeleniumTests.StudentLoginS2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method AllSeleniumTests.StudentLoginS2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StudentLoginS2 -->
-        <test-method status="PASS" signature="StudentS2TakeCourseC2()[pri:0, instance:org.com5104.testngselenium.NewTest1@5649fd9b]" name="StudentS2TakeCourseC2" duration-ms="866" started-at="2017-12-07T17:54:39Z" depends-on-methods="org.com5104.testngselenium.NewTest1.StudentLoginS2" finished-at="2017-12-07T17:54:40Z">
+        <test-method status="SKIP" signature="StudentS2TakeCourseC2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentS2TakeCourseC2" duration-ms="0" started-at="2017-12-07T19:12:39Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentLoginS2" finished-at="2017-12-07T19:12:39Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method AllSeleniumTests.StudentS2TakeCourseC2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method AllSeleniumTests.StudentS2TakeCourseC2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StudentS2TakeCourseC2 -->
-        <test-method status="PASS" signature="StudentS2TakeCourseC3()[pri:0, instance:org.com5104.testngselenium.NewTest1@5649fd9b]" name="StudentS2TakeCourseC3" duration-ms="342" started-at="2017-12-07T17:54:40Z" depends-on-methods="org.com5104.testngselenium.NewTest1.StudentS2TakeCourseC2" finished-at="2017-12-07T17:54:40Z">
+        <test-method status="SKIP" signature="StudentS2TakeCourseC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentS2TakeCourseC3" duration-ms="0" started-at="2017-12-07T19:12:39Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentS2TakeCourseC2" finished-at="2017-12-07T19:12:39Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method AllSeleniumTests.StudentS2TakeCourseC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method AllSeleniumTests.StudentS2TakeCourseC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StudentS2TakeCourseC3 -->
-        <test-method status="PASS" signature="StudentS2RegisterForCourseC2()[pri:0, instance:org.com5104.testngselenium.NewTest1@5649fd9b]" name="StudentS2RegisterForCourseC2" duration-ms="739" started-at="2017-12-07T17:54:40Z" depends-on-methods="org.com5104.testngselenium.NewTest1.StudentS2TakeCourseC3" finished-at="2017-12-07T17:54:41Z">
+        <test-method status="SKIP" signature="StudentS2RegisterForCourseC2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentS2RegisterForCourseC2" duration-ms="0" started-at="2017-12-07T19:12:39Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentS2TakeCourseC3" finished-at="2017-12-07T19:12:39Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method AllSeleniumTests.StudentS2RegisterForCourseC2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method AllSeleniumTests.StudentS2RegisterForCourseC2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StudentS2RegisterForCourseC2 -->
-        <test-method status="PASS" signature="StudentS2RegisterForCourseC3()[pri:0, instance:org.com5104.testngselenium.NewTest1@5649fd9b]" name="StudentS2RegisterForCourseC3" duration-ms="421" started-at="2017-12-07T17:54:41Z" depends-on-methods="org.com5104.testngselenium.NewTest1.StudentS2RegisterForCourseC2" finished-at="2017-12-07T17:54:42Z">
+        <test-method status="SKIP" signature="StudentS2RegisterForCourseC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentS2RegisterForCourseC3" duration-ms="0" started-at="2017-12-07T19:12:39Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentS2RegisterForCourseC2" finished-at="2017-12-07T19:12:39Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method AllSeleniumTests.StudentS2RegisterForCourseC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method AllSeleniumTests.StudentS2RegisterForCourseC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StudentS2RegisterForCourseC3 -->
-        <test-method status="PASS" signature="StudentS2DeRegisterForCourseC2()[pri:0, instance:org.com5104.testngselenium.NewTest1@5649fd9b]" name="StudentS2DeRegisterForCourseC2" duration-ms="641" started-at="2017-12-07T17:54:42Z" depends-on-methods="org.com5104.testngselenium.NewTest1.StudentS2RegisterForCourseC3" finished-at="2017-12-07T17:54:42Z">
+        <test-method status="SKIP" signature="StudentS2DeRegisterForCourseC2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentS2DeRegisterForCourseC2" duration-ms="0" started-at="2017-12-07T19:12:39Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentS2RegisterForCourseC3" finished-at="2017-12-07T19:12:39Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method AllSeleniumTests.StudentS2DeRegisterForCourseC2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method AllSeleniumTests.StudentS2DeRegisterForCourseC2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StudentS2DeRegisterForCourseC2 -->
-        <test-method status="PASS" signature="StudentS2DropCourseC3()[pri:0, instance:org.com5104.testngselenium.NewTest1@5649fd9b]" name="StudentS2DropCourseC3" duration-ms="669" started-at="2017-12-07T17:54:42Z" depends-on-methods="org.com5104.testngselenium.NewTest1.StudentS2DeRegisterForCourseC2" finished-at="2017-12-07T17:54:43Z">
+        <test-method status="SKIP" signature="StudentS2DropCourseC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentS2DropCourseC3" duration-ms="0" started-at="2017-12-07T19:12:39Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentS2DeRegisterForCourseC2" finished-at="2017-12-07T19:12:39Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method AllSeleniumTests.StudentS2DropCourseC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method AllSeleniumTests.StudentS2DropCourseC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StudentS2DropCourseC3 -->
-        <test-method status="PASS" signature="StudentLogOut()[pri:0, instance:org.com5104.testngselenium.NewTest1@5649fd9b]" name="StudentLogOut" duration-ms="177" started-at="2017-12-07T17:54:43Z" depends-on-methods="org.com5104.testngselenium.NewTest1.StudentS2DropCourseC3" finished-at="2017-12-07T17:54:43Z">
+        <test-method status="SKIP" signature="StudentLogOut()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentLogOut" duration-ms="0" started-at="2017-12-07T19:12:39Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentS2DropCourseC3" finished-at="2017-12-07T19:12:39Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method AllSeleniumTests.StudentLogOut()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method AllSeleniumTests.StudentLogOut()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StudentLogOut -->
-        <test-method status="PASS" signature="ShutDriver()[pri:0, instance:org.com5104.testngselenium.NewTest1@5649fd9b]" name="ShutDriver" is-config="true" duration-ms="1019" started-at="2017-12-07T17:54:43Z" finished-at="2017-12-07T17:54:44Z">
+        <test-method status="PASS" signature="ShutDriver()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="ShutDriver" is-config="true" duration-ms="1018" started-at="2017-12-07T19:12:39Z" finished-at="2017-12-07T19:12:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ShutDriver -->
-      </class> <!-- org.com5104.testngselenium.NewTest1 -->
+      </class> <!-- org.com5104.testngselenium.AllSeleniumTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

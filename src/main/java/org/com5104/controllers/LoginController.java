@@ -31,12 +31,14 @@ public class LoginController {
 		}else {
 			if(login.getUserName().equalsIgnoreCase("clerk") && login.getPassWord().equalsIgnoreCase("admin")) {
 				System.out.println("***************Tansin*******************");
+				request.setAttribute("message", "Successfully logged in!!");
 				return new ModelAndView("clerk/clerk_home", "", null);
 			}else if(login.getUserName().contains("@")) {
 				Student currentStudent =StudentTable.getInstance().findByEmailPassword(login.getUserName(), login.getPassWord());
 				if(currentStudent!=null){
 					request.getSession().setAttribute("currentStudent", currentStudent);
 					System.out.println("**********************************");
+					request.setAttribute("message", "Successfully logged in!!");
 					return new ModelAndView("student/student_home", "", null);
 				}else {
 					redirectAttributes.addFlashAttribute("message", "Your username should be your email");
