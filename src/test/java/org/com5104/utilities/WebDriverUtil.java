@@ -22,15 +22,11 @@ public class WebDriverUtil {
     public static long DEFAULT_WAIT = 20;
     protected static WebDriver driver=null;
 
-    public static WebDriver getDefaultDriver() {
-    	DesiredCapabilities caps = new DesiredCapabilities();
-    	caps.setJavascriptEnabled(true);                
-    	caps.setCapability("takesScreenshot", true);  
-    	caps.setCapability(
-    			PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,
-    	        ".\\phantomjs\\phantomjs-2.1.1-windows\\\\bin\\phantomjs.exe"
-    	);
-    	WebDriver driver = new  PhantomJSDriver(caps);
-        return driver;
-    }
+	public static WebDriver getDefaultDriver() {
+		System.setProperty("webdriver.chrome.driver", "F:/chromedriver.exe");
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--start-maximized");
+		driver = new ChromeDriver(options);
+		return driver;
+	}
 }

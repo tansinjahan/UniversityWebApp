@@ -24,7 +24,7 @@ public class AllSeleniumTests {
 	}
 
 	@Test
-	public void ClerkLogin(){
+	public void ClerkLogin() throws Exception{
 		driver.findElement(By.id("user")).sendKeys("clerk");
 		driver.findElement(By.id("password")).sendKeys(Config.CLERK_PASSWORD);
 		driver.findElement(By.id("loginSubmit")).click();

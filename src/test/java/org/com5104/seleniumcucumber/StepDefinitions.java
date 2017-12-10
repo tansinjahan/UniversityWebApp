@@ -26,14 +26,14 @@ public class StepDefinitions {
 	
 	@When("^enters \"([^\"]*)\" and \"([^\"]*)\"$")
 	public void enter_and(String arg1, String arg2) throws Throwable {
-		aDriver.findElement(By.id("userName")).sendKeys(arg1);
-		aDriver.findElement(By.id("passWord")).sendKeys(arg2);
-		aDriver.findElement(By.id("loginSb")).click();
+		aDriver.findElement(By.id("user")).sendKeys("clerk");
+		aDriver.findElement(By.id("password")).sendKeys(Config.CLERK_PASSWORD);
+		aDriver.findElement(By.id("loginSubmit")).click();
 	}
 	
 	@Then("^the clerk sees clerk's home page$")
 	public void the_clerk_sees_clerk_s_home_page() throws Throwable {
-		assert(aDriver.findElement(By.id("cHome")).getText().contains("Welcome to Clerk"));
+		assert(aDriver.findElement(By.id("message")).getText().contains("Successfully logged in!!"));
 	}
 
 	@Then("^the use sees \"([^\"]*)\"$")
@@ -46,17 +46,16 @@ public class StepDefinitions {
 		aDriver.get("http:localhost:8080/login");
 	}
 
-	@When("^enters username and password$")
+	@When("^enters wrong username and password$")
 	public void enters_username_and_password() throws Throwable {
-		//StudentTable.createFakeStudent();
-	    aDriver.findElement(By.id("userName")).sendKeys("jim@gotham");
-		aDriver.findElement(By.id("passWord")).sendKeys("12345");
-		aDriver.findElement(By.id("loginSb")).click();
+		aDriver.findElement(By.id("user")).sendKeys("a@b.com");
+		aDriver.findElement(By.id("password")).sendKeys(Config.CLERK_PASSWORD);
+		aDriver.findElement(By.id("loginSubmit")).click();
 	}
 
-	@Then("^the student sees student's home page$")
+	@Then("^the student sees login error message$")
 	public void the_student_sees_student_s_home_page() throws Throwable {
-		assert(aDriver.findElement(By.id("sHome")).getText().contains("Welcome to Student"));
+		assert(aDriver.findElement(By.id("messages")).getText().contains("Your username"));
 	}
 	
 	@Before
