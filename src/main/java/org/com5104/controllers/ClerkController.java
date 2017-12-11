@@ -6,6 +6,7 @@ import org.com5104.models.Course;
 import org.com5104.models.CourseWebModel;
 import org.com5104.models.Login;
 import org.com5104.models.Student;
+import org.com5104.models.StudentMark;
 import org.com5104.models.StudentWebModel;
 import org.com5104.models.TestTermSimulator;
 import org.com5104.models.University;
@@ -147,5 +148,123 @@ public class ClerkController {
 
 		}
 	}
+
+	
+	@RequestMapping(value = "/assignment_mark", method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView generateAssignmentMark(@ModelAttribute("assignmentMarkForm") @Validated StudentMark studentMark,
+			BindingResult result, Model model,final RedirectAttributes redirectAttributes,
+			HttpServletRequest request) {
+		if (request.getMethod().contains("GET")) {
+			return new ModelAndView("clerk/assignment_mark");
+		} else {
+			try {
+				Course dCourse = CourseTable.getInstance().findCourseByCode(Integer.parseInt(request.getParameter("code"))); 
+				Student dStudent = StudentTable.getInstance().findByStudentNumber(Integer.parseInt(request.getParameter("studentNumber"))); 
+				University.getInstance().submitAssignMark(dCourse, dStudent);
+				request.setAttribute("message", "Assignment mark is submitted successfully");
+				return new ModelAndView("clerk/clerk_home");
+			}catch(Exception e) {
+				System.out.println("*************form error*****************");
+				System.out.println("Course code is not defined");
+				request.setAttribute("message", "Please enter course code");
+				return new ModelAndView("clerk/assignment_mark");
+			}
+
+		}
+	}
+	
+	@RequestMapping(value = "/mid_mark", method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView generateMidMark(@ModelAttribute("midMarkForm") @Validated StudentMark studentMark,
+			BindingResult result, Model model,final RedirectAttributes redirectAttributes,
+			HttpServletRequest request) {
+		if (request.getMethod().contains("GET")) {
+			return new ModelAndView("clerk/mid_mark");
+		} else {
+			try {
+				Course dCourse = CourseTable.getInstance().findCourseByCode(Integer.parseInt(request.getParameter("code"))); 
+				Student dStudent = StudentTable.getInstance().findByStudentNumber(Integer.parseInt(request.getParameter("studentNumber"))); 
+				University.getInstance().submitMidMark(dCourse, dStudent);
+				request.setAttribute("message", "mid mark is submitted successfully");
+				return new ModelAndView("clerk/clerk_home");
+			}catch(Exception e) {
+				System.out.println("*************form error*****************");
+				System.out.println("Course code is not defined");
+				request.setAttribute("message", "Please enter course code");
+				return new ModelAndView("clerk/mid_mark");
+			}
+
+		}
+	}
+	
+	@RequestMapping(value = "/project_mark", method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView generateProjectMark(@ModelAttribute("projectMarkForm") @Validated StudentMark studentMark,
+			BindingResult result, Model model,final RedirectAttributes redirectAttributes,
+			HttpServletRequest request) {
+		if (request.getMethod().contains("GET")) {
+			return new ModelAndView("clerk/project_mark");
+		} else {
+			try {
+				Course dCourse = CourseTable.getInstance().findCourseByCode(Integer.parseInt(request.getParameter("code"))); 
+				Student dStudent = StudentTable.getInstance().findByStudentNumber(Integer.parseInt(request.getParameter("studentNumber"))); 
+				University.getInstance().submitProjectMark(dCourse, dStudent);
+				request.setAttribute("message", "project mark is submitted successfully");
+				return new ModelAndView("clerk/clerk_home");
+			}catch(Exception e) {
+				System.out.println("*************form error*****************");
+				System.out.println("Course code is not defined");
+				request.setAttribute("message", "Please enter course code");
+				return new ModelAndView("clerk/project_mark");
+			}
+
+		}
+	}
+	
+	@RequestMapping(value = "/final_mark", method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView generateFinalMark(@ModelAttribute("finalMarkForm") @Validated StudentMark studentMark,
+			BindingResult result, Model model,final RedirectAttributes redirectAttributes,
+			HttpServletRequest request) {
+		if (request.getMethod().contains("GET")) {
+			return new ModelAndView("clerk/final_mark");
+		} else {
+			try {
+				Course dCourse = CourseTable.getInstance().findCourseByCode(Integer.parseInt(request.getParameter("code"))); 
+				Student dStudent = StudentTable.getInstance().findByStudentNumber(Integer.parseInt(request.getParameter("studentNumber"))); 
+				University.getInstance().submitFinalMark(dCourse, dStudent);
+				request.setAttribute("message", "final mark is submitted successfully");
+				return new ModelAndView("clerk/clerk_home");
+			}catch(Exception e) {
+				System.out.println("*************form error*****************");
+				System.out.println("Course code is not defined");
+				request.setAttribute("message", "Please enter course code");
+				return new ModelAndView("clerk/final_mark");
+			}
+
+		}
+	}
+	
+	@RequestMapping(value = "/obtain_mark", method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView obtainMark(@ModelAttribute("obtainMarkForm") @Validated StudentMark studentMark,
+			BindingResult result, Model model,final RedirectAttributes redirectAttributes,
+			HttpServletRequest request) {
+		if (request.getMethod().contains("GET")) {
+			return new ModelAndView("clerk/obtain_mark");
+		} else {
+			try {
+				Course dCourse = CourseTable.getInstance().findCourseByCode(Integer.parseInt(request.getParameter("code"))); 
+				Student dStudent = StudentTable.getInstance().findByStudentNumber(Integer.parseInt(request.getParameter("studentNumber"))); 
+				University.getInstance().obtainMark(dCourse, dStudent);
+				request.setAttribute("message", "obtained mark successfully");
+				return new ModelAndView("clerk/clerk_home");
+			}catch(Exception e) {
+				System.out.println("*************form error*****************");
+				System.out.println("Course code is not defined");
+				request.setAttribute("message", "Please enter course code");
+				return new ModelAndView("clerk/obtain_mark");
+			}
+
+		}
+	}
+
+	
 
 }

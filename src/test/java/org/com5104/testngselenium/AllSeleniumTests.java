@@ -189,6 +189,77 @@ public class AllSeleniumTests {
 	}
 	
 	@Test (dependsOnMethods=("StudentS2DeRegisterForCourseC2"))
+	public void StudentLogOut() {
+		driver.findElement(By.id("logout")).click();
+	}
+	
+	@Test (dependsOnMethods=("StudentLogOut"))
+	public void ClerkLoginAgain() {
+		driver.findElement(By.id("user")).sendKeys("clerk");
+		driver.findElement(By.id("password")).sendKeys(Config.CLERK_PASSWORD);
+		driver.findElement(By.id("loginSubmit")).click();
+		assert(driver.findElement(By.id("message")).getText().contains("Successfully logged in!!"));
+	}
+	
+	@Test (dependsOnMethods=("ClerkLoginAgain"))
+	public void GenerateStudentS2AssignmentMarkC3() {
+		driver.findElement(By.id("assignmentMark")).click();
+		driver.findElement(By.id("studentNumber")).sendKeys("123456");;
+		driver.findElement(By.id("code")).sendKeys("112244");
+		driver.findElement(By.id("assignmentMarkSubmit")).click();
+		assert(driver.findElement(By.id("message")).getText().contains("Assignment mark is submitted successfully"));
+	}
+	
+	@Test (dependsOnMethods=("GenerateStudentS2AssignmentMarkC3"))
+	public void GenerateStudentS2MidMarkC3() {
+		driver.findElement(By.id("midMark")).click();
+		driver.findElement(By.id("studentNumber")).sendKeys("123456");;
+		driver.findElement(By.id("code")).sendKeys("112244");
+		driver.findElement(By.id("midMarkSubmit")).click();
+		assert(driver.findElement(By.id("message")).getText().contains("mid mark is submitted successfully"));
+	}
+	
+	@Test (dependsOnMethods=("GenerateStudentS2MidMarkC3"))
+	public void GenerateStudentS2ProjectMarkC3() {
+		driver.findElement(By.id("projectMark")).click();
+		driver.findElement(By.id("studentNumber")).sendKeys("123456");;
+		driver.findElement(By.id("code")).sendKeys("112244");
+		driver.findElement(By.id("projectMarkSubmit")).click();
+		assert(driver.findElement(By.id("message")).getText().contains("project mark is submitted successfully"));
+	}
+	
+	@Test (dependsOnMethods=("GenerateStudentS2ProjectMarkC3"))
+	public void GenerateStudentS2FinaltMarkC3() {
+		driver.findElement(By.id("finalMark")).click();
+		driver.findElement(By.id("studentNumber")).sendKeys("123456");;
+		driver.findElement(By.id("code")).sendKeys("112244");
+		driver.findElement(By.id("finalMarkSubmit")).click();
+		assert(driver.findElement(By.id("message")).getText().contains("final mark is submitted successfully"));
+	}
+	
+	
+	@Test (dependsOnMethods=("GenerateStudentS2FinaltMarkC3"))
+	public void ObtaintS2FinaltMarkC3() {
+		driver.findElement(By.id("obtainMark")).click();
+		driver.findElement(By.id("studentNumber")).sendKeys("123456");;
+		driver.findElement(By.id("code")).sendKeys("112244");
+		driver.findElement(By.id("obtainMarkSubmit")).click();
+		assert(driver.findElement(By.id("message")).getText().contains("obtained mark successfully"));
+	}
+	
+	@Test (dependsOnMethods=("ObtaintS2FinaltMarkC3"))
+	public void ClerkLogOutAgain() {
+		driver.findElement(By.id("logout")).click();
+	}
+	
+	@Test (dependsOnMethods=("ClerkLogOutAgain"))
+	public void StudentLoginAgainS2() {
+		driver.findElement(By.id("user")).sendKeys("ta@gmail");
+		driver.findElement(By.id("password")).sendKeys("12345");
+		driver.findElement(By.id("loginSubmit")).click();
+	}
+	
+	@Test (dependsOnMethods=("StudentLoginAgainS2"))
 	public void StudentS2DropCourseC3() {
 		driver.findElement(By.id("dropcourse")).click();
 		driver.findElement(By.id("code")).sendKeys("112244");
@@ -197,8 +268,9 @@ public class AllSeleniumTests {
 	}
 	
 	@Test (dependsOnMethods=("StudentS2DropCourseC3"))
-	public void StudentLogOut() {
+	public void StudentLogOutAgain() {
 		driver.findElement(By.id("logout")).click();
 	}
+	
 	
 }

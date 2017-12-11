@@ -1,89 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="18" passed="18">
+<testng-results skipped="0" failed="0" ignored="0" total="27" passed="27">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="54505" started-at="2017-12-10T22:10:19Z" finished-at="2017-12-10T22:11:14Z">
+  <suite name="Default suite" duration-ms="27581" started-at="2017-12-11T06:05:07Z" finished-at="2017-12-11T06:05:35Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="54505" started-at="2017-12-10T22:10:19Z" finished-at="2017-12-10T22:11:14Z">
+    <test name="Default test" duration-ms="27581" started-at="2017-12-11T06:05:07Z" finished-at="2017-12-11T06:05:35Z">
       <class name="org.com5104.testngselenium.AllSeleniumTests">
-        <test-method status="PASS" signature="Before()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="Before" is-config="true" duration-ms="32248" started-at="2017-12-10T17:10:19Z" finished-at="2017-12-10T17:10:52Z">
+        <test-method status="PASS" signature="Before()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="Before" is-config="true" duration-ms="7372" started-at="2017-12-11T01:05:07Z" finished-at="2017-12-11T01:05:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Before -->
-        <test-method status="PASS" signature="ClerkLogin()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="ClerkLogin" duration-ms="2579" started-at="2017-12-10T17:10:52Z" finished-at="2017-12-10T17:10:54Z">
+        <test-method status="PASS" signature="ClerkLogin()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="ClerkLogin" duration-ms="918" started-at="2017-12-11T01:05:15Z" finished-at="2017-12-11T01:05:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ClerkLogin -->
-        <test-method status="PASS" signature="CreateStudentS1()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="CreateStudentS1" duration-ms="3519" started-at="2017-12-10T17:10:54Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.ClerkLogin" finished-at="2017-12-10T17:10:58Z">
+        <test-method status="PASS" signature="CreateStudentS1()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="CreateStudentS1" duration-ms="1518" started-at="2017-12-11T01:05:16Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.ClerkLogin" finished-at="2017-12-11T01:05:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateStudentS1 -->
-        <test-method status="PASS" signature="CreateCourseC1()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="CreateCourseC1" duration-ms="2686" started-at="2017-12-10T17:10:58Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.CreateStudentS1" finished-at="2017-12-10T17:11:00Z">
+        <test-method status="PASS" signature="CreateCourseC1()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="CreateCourseC1" duration-ms="1778" started-at="2017-12-11T01:05:17Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.CreateStudentS1" finished-at="2017-12-11T01:05:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateCourseC1 -->
-        <test-method status="PASS" signature="DeleteStudentS1()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="DeleteStudentS1" duration-ms="942" started-at="2017-12-10T17:11:00Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.CreateCourseC1" finished-at="2017-12-10T17:11:01Z">
+        <test-method status="PASS" signature="DeleteStudentS1()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="DeleteStudentS1" duration-ms="725" started-at="2017-12-11T01:05:19Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.CreateCourseC1" finished-at="2017-12-11T01:05:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DeleteStudentS1 -->
-        <test-method status="PASS" signature="DeleteCourseC1()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="DeleteCourseC1" duration-ms="911" started-at="2017-12-10T17:11:01Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.DeleteStudentS1" finished-at="2017-12-10T17:11:02Z">
+        <test-method status="PASS" signature="DeleteCourseC1()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="DeleteCourseC1" duration-ms="791" started-at="2017-12-11T01:05:20Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.DeleteStudentS1" finished-at="2017-12-11T01:05:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DeleteCourseC1 -->
-        <test-method status="PASS" signature="CreateCourseC2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="CreateCourseC2" duration-ms="1389" started-at="2017-12-10T17:11:02Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.DeleteCourseC1" finished-at="2017-12-10T17:11:04Z">
+        <test-method status="PASS" signature="CreateCourseC2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="CreateCourseC2" duration-ms="1125" started-at="2017-12-11T01:05:20Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.DeleteCourseC1" finished-at="2017-12-11T01:05:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateCourseC2 -->
-        <test-method status="PASS" signature="CreateStudentS2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="CreateStudentS2" duration-ms="994" started-at="2017-12-10T17:11:04Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.CreateCourseC2" finished-at="2017-12-10T17:11:05Z">
+        <test-method status="PASS" signature="CreateStudentS2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="CreateStudentS2" duration-ms="777" started-at="2017-12-11T01:05:22Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.CreateCourseC2" finished-at="2017-12-11T01:05:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateStudentS2 -->
-        <test-method status="PASS" signature="CreateCourseC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="CreateCourseC3" duration-ms="1151" started-at="2017-12-10T17:11:05Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.CreateStudentS2" finished-at="2017-12-10T17:11:06Z">
+        <test-method status="PASS" signature="CreateCourseC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="CreateCourseC3" duration-ms="1007" started-at="2017-12-11T01:05:22Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.CreateStudentS2" finished-at="2017-12-11T01:05:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateCourseC3 -->
-        <test-method status="PASS" signature="CreateStudentS3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="CreateStudentS3" duration-ms="1055" started-at="2017-12-10T17:11:06Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.CreateCourseC3" finished-at="2017-12-10T17:11:07Z">
+        <test-method status="PASS" signature="CreateStudentS3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="CreateStudentS3" duration-ms="865" started-at="2017-12-11T01:05:23Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.CreateCourseC3" finished-at="2017-12-11T01:05:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateStudentS3 -->
-        <test-method status="PASS" signature="ClerkLogOut()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="ClerkLogOut" duration-ms="210" started-at="2017-12-10T17:11:07Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.CreateStudentS3" finished-at="2017-12-10T17:11:07Z">
+        <test-method status="PASS" signature="ClerkLogOut()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="ClerkLogOut" duration-ms="167" started-at="2017-12-11T01:05:24Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.CreateStudentS3" finished-at="2017-12-11T01:05:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ClerkLogOut -->
-        <test-method status="PASS" signature="StudentLoginS2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentLoginS2" duration-ms="656" started-at="2017-12-10T17:11:07Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.ClerkLogOut" finished-at="2017-12-10T17:11:08Z">
+        <test-method status="PASS" signature="StudentLoginS2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentLoginS2" duration-ms="649" started-at="2017-12-11T01:05:24Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.ClerkLogOut" finished-at="2017-12-11T01:05:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StudentLoginS2 -->
-        <test-method status="PASS" signature="StudentS2TakeCourseC2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentS2TakeCourseC2" duration-ms="950" started-at="2017-12-10T17:11:08Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentLoginS2" finished-at="2017-12-10T17:11:09Z">
+        <test-method status="PASS" signature="StudentS2TakeCourseC2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentS2TakeCourseC2" duration-ms="804" started-at="2017-12-11T01:05:25Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentLoginS2" finished-at="2017-12-11T01:05:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StudentS2TakeCourseC2 -->
-        <test-method status="PASS" signature="StudentS2TakeCourseC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentS2TakeCourseC3" duration-ms="486" started-at="2017-12-10T17:11:09Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentS2TakeCourseC2" finished-at="2017-12-10T17:11:09Z">
+        <test-method status="PASS" signature="StudentS2TakeCourseC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentS2TakeCourseC3" duration-ms="366" started-at="2017-12-11T01:05:26Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentS2TakeCourseC2" finished-at="2017-12-11T01:05:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StudentS2TakeCourseC3 -->
-        <test-method status="PASS" signature="StudentS2RegisterForCourseC2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentS2RegisterForCourseC2" duration-ms="844" started-at="2017-12-10T17:11:09Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentS2TakeCourseC3" finished-at="2017-12-10T17:11:10Z">
+        <test-method status="PASS" signature="StudentS2RegisterForCourseC2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentS2RegisterForCourseC2" duration-ms="694" started-at="2017-12-11T01:05:26Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentS2TakeCourseC3" finished-at="2017-12-11T01:05:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StudentS2RegisterForCourseC2 -->
-        <test-method status="PASS" signature="StudentS2RegisterForCourseC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentS2RegisterForCourseC3" duration-ms="411" started-at="2017-12-10T17:11:10Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentS2RegisterForCourseC2" finished-at="2017-12-10T17:11:10Z">
+        <test-method status="PASS" signature="StudentS2RegisterForCourseC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentS2RegisterForCourseC3" duration-ms="381" started-at="2017-12-11T01:05:27Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentS2RegisterForCourseC2" finished-at="2017-12-11T01:05:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StudentS2RegisterForCourseC3 -->
-        <test-method status="PASS" signature="StudentS2DeRegisterForCourseC2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentS2DeRegisterForCourseC2" duration-ms="778" started-at="2017-12-10T17:11:10Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentS2RegisterForCourseC3" finished-at="2017-12-10T17:11:11Z">
+        <test-method status="PASS" signature="StudentS2DeRegisterForCourseC2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentS2DeRegisterForCourseC2" duration-ms="698" started-at="2017-12-11T01:05:27Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentS2RegisterForCourseC3" finished-at="2017-12-11T01:05:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StudentS2DeRegisterForCourseC2 -->
-        <test-method status="PASS" signature="StudentS2DropCourseC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentS2DropCourseC3" duration-ms="840" started-at="2017-12-10T17:11:11Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentS2DeRegisterForCourseC2" finished-at="2017-12-10T17:11:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- StudentS2DropCourseC3 -->
-        <test-method status="PASS" signature="StudentLogOut()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentLogOut" duration-ms="200" started-at="2017-12-10T17:11:12Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentS2DropCourseC3" finished-at="2017-12-10T17:11:12Z">
+        <test-method status="PASS" signature="StudentLogOut()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentLogOut" duration-ms="146" started-at="2017-12-11T01:05:28Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentS2DeRegisterForCourseC2" finished-at="2017-12-11T01:05:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StudentLogOut -->
-        <test-method status="PASS" signature="ShutDriver()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="ShutDriver" is-config="true" duration-ms="1568" started-at="2017-12-10T17:11:12Z" finished-at="2017-12-10T17:11:14Z">
+        <test-method status="PASS" signature="ClerkLoginAgain()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="ClerkLoginAgain" duration-ms="409" started-at="2017-12-11T01:05:28Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentLogOut" finished-at="2017-12-11T01:05:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClerkLoginAgain -->
+        <test-method status="PASS" signature="GenerateStudentS2AssignmentMarkC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="GenerateStudentS2AssignmentMarkC3" duration-ms="827" started-at="2017-12-11T01:05:29Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.ClerkLoginAgain" finished-at="2017-12-11T01:05:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GenerateStudentS2AssignmentMarkC3 -->
+        <test-method status="PASS" signature="GenerateStudentS2MidMarkC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="GenerateStudentS2MidMarkC3" duration-ms="788" started-at="2017-12-11T01:05:29Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.GenerateStudentS2AssignmentMarkC3" finished-at="2017-12-11T01:05:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GenerateStudentS2MidMarkC3 -->
+        <test-method status="PASS" signature="GenerateStudentS2ProjectMarkC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="GenerateStudentS2ProjectMarkC3" duration-ms="720" started-at="2017-12-11T01:05:30Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.GenerateStudentS2MidMarkC3" finished-at="2017-12-11T01:05:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GenerateStudentS2ProjectMarkC3 -->
+        <test-method status="PASS" signature="GenerateStudentS2FinaltMarkC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="GenerateStudentS2FinaltMarkC3" duration-ms="808" started-at="2017-12-11T01:05:31Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.GenerateStudentS2ProjectMarkC3" finished-at="2017-12-11T01:05:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GenerateStudentS2FinaltMarkC3 -->
+        <test-method status="PASS" signature="ObtaintS2FinaltMarkC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="ObtaintS2FinaltMarkC3" duration-ms="807" started-at="2017-12-11T01:05:32Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.GenerateStudentS2FinaltMarkC3" finished-at="2017-12-11T01:05:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ObtaintS2FinaltMarkC3 -->
+        <test-method status="PASS" signature="ClerkLogOutAgain()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="ClerkLogOutAgain" duration-ms="131" started-at="2017-12-11T01:05:32Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.ObtaintS2FinaltMarkC3" finished-at="2017-12-11T01:05:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClerkLogOutAgain -->
+        <test-method status="PASS" signature="StudentLoginAgainS2()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentLoginAgainS2" duration-ms="291" started-at="2017-12-11T01:05:33Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.ClerkLogOutAgain" finished-at="2017-12-11T01:05:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StudentLoginAgainS2 -->
+        <test-method status="PASS" signature="StudentS2DropCourseC3()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentS2DropCourseC3" duration-ms="698" started-at="2017-12-11T01:05:33Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentLoginAgainS2" finished-at="2017-12-11T01:05:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StudentS2DropCourseC3 -->
+        <test-method status="PASS" signature="StudentLogOutAgain()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="StudentLogOutAgain" duration-ms="121" started-at="2017-12-11T01:05:34Z" depends-on-methods="org.com5104.testngselenium.AllSeleniumTests.StudentS2DropCourseC3" finished-at="2017-12-11T01:05:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StudentLogOutAgain -->
+        <test-method status="PASS" signature="ShutDriver()[pri:0, instance:org.com5104.testngselenium.AllSeleniumTests@69ea3742]" name="ShutDriver" is-config="true" duration-ms="1132" started-at="2017-12-11T01:05:34Z" finished-at="2017-12-11T01:05:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ShutDriver -->

@@ -25,7 +25,7 @@
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
+					<li class="active"><a href="clerk_home" id="clerkHome">Home</a></li>
 					<li><a href="#about">About</a></li>
 				</ul>
 			</div>
@@ -34,21 +34,31 @@
 
 	<div class="container">
 
-		<h1>Welcome to Clerk Home Page</h1>
+		<h1>Create course</h1>
+
 		<c:if test="${!empty message}">
 			<div id="message" class="alert alert-danger">${message}.</div>
 		</c:if>
-		
-		<a href="create_course" id="createcourse">Create Course<br></a> <a
-			href="create_student" id="createstudent">Create Student<br></a>
-		<a href="delete_course" id="deletecourse">Delete Course<br></a> <a
-			href="delete_student" id="deletestudent">Delete Student<br></a>
-			<a href="assignment_mark" id="assignmentMark">Generate Assignment Mark<br></a>
-			<a href="mid_mark" id="midMark">Generate Mid Mark<br></a>
-			<a href="project_mark" id="projectMark">Generate Project Mark<br></a>
-			<a href="final_mark" id="finalMark">Generate Final Mark<br></a>
-			<a href="obtain_mark" id="obtainMark">Obtain Mark<br></a>
-		<a href="login" id="logout">Log Out</a>
+
+		<form:form method="POST" action="/final_mark" modelAttribute="finalMarkForm">
+			<table >
+				<tr>
+					<td><form:label path="studentNumber">Student Number</form:label></td>
+					<td><form:input path="studentNumber" id ="studentNumber" /></td>
+				</tr>
+				<tr>
+					<td><form:label path="code">Course Code</form:label></td>
+					<td><form:input path="code" id="code"/></td>
+				</tr>
+				<tr>
+					<td><input type="submit" id="finalMarkSubmit" value="Submit" /></td>
+				</tr>
+			</table>
+			<button>
+				<a href="login" id="logout">Log Out</a>
+			</button>
+		</form:form>
+
 	</div>
 	<!-- /.container -->
 
